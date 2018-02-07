@@ -1,0 +1,15 @@
+logs/
+npm-debug.log
+yarn-error.log
+node_modules/
+package-lock.json
+yarn.lock
+coverage/
+.idea/
+public/
+config/config.local.js
+config/manifest.json
+run/
+.DS_Store
+*.sw*
+*.un~
