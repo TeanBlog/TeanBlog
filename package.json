@@ -1,0 +1,27 @@
+{
+  "name": "teanblog",
+  "version": "0.1.0",
+  "description": "My blog.",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "cz-conventional-changelog": "^2.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "TeanBlog"
+  },
+  "keywords": [
+    "blog"
+  ],
+  "author": "TeanLee <ltt59625763@qq.com> (https://teanlee.github.io/qs_js_lesson/)",
+  "license": "ISC",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
