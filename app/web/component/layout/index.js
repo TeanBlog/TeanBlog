@@ -1,4 +1,6 @@
-const content = '<div id="app"><div slot="main"><slot></slot></div></div>';
+import MainLayout from './main';
+
+const content = '<div id="app"><main-layout><div slot="main"><slot></slot></div></main-layout></div>';
 
 const template = `<!DOCTYPE html>
 <html lang="en">
@@ -8,9 +10,8 @@ const template = `<!DOCTYPE html>
   <meta name="description" :content="description">
   <meta http-equiv="content-type" content="text/html;charset=utf-8">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 </head>
-<body :class="baseClass">
+<body class="js-system--apple">
   <div id="app">${content}</div>
 </body>
 </html>`;
@@ -19,6 +20,7 @@ export default {
   name: 'Layout',
   props: [ 'title', 'description', 'keywords' ],
   components: {
+    MainLayout
   },
   computed: {
     vTitle() {
@@ -29,9 +31,6 @@ export default {
     },
     vDescription() {
       return this.$root.description || this.description || 'TeanBlog';
-    },
-    baseClass() {
-      return this.$root.baseClass;
     }
   },
   template: EASY_ENV_IS_NODE ? template : content
