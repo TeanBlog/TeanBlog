@@ -1,11 +1,8 @@
 {
-  "extends": [
-    "eslint-config-egg"
-  ],
+  "extends": "eslint-config-egg",
   "parserOptions": {
     "ecmaVersion": 6,
-    "sourceType": "module",
-    "parser": "babel-eslint"
+    "sourceType": "module"
   },
   "rules": {
     "curly": 2,
@@ -22,10 +19,10 @@
     "no-empty-function": 2,
     "array-bracket-spacing": 2,
     "no-multiple-empty-lines": 2,
-    "strict": "off",
-    "eol-last": "off",
-    "valid-jsdoc": "off",
     "arrow-parens": "off",
+    "valid-jsdoc": "off",
+    "eol-last": "off",
+    "strict": "off",
     "semi": [
       "error",
       "always"
@@ -33,6 +30,12 @@
     "quotes": [
       "error",
       "single"
+    ],
+    "no-irregular-whitespace": [
+      "error",
+      {
+        "skipComments": true
+      }
     ],
     "key-spacing": [
       "error",
@@ -49,13 +52,6 @@
         "objects": "only-multiline"
       }
     ],
-    "no-irregular-whitespace": [
-      "error",
-      {
-        "skipComments": true
-      }
-    ],
-
     "space-before-function-paren": [
       "error",
       {
@@ -78,5 +74,6 @@
   },
   "plugins": [
     "vue"
-  ]
+  ],
+  "parser": "babel-eslint"
 }

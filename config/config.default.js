@@ -28,7 +28,7 @@ module.exports = app => {
   // static
   config.static = {
     prefix: '/public/',
-    dir: path.join(app.baseDir, 'public')
+    dir:    path.join(app.baseDir, 'public')
   };
 
   return config;
