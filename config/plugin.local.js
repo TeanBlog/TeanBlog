@@ -2,12 +2,12 @@
 
 // egg-webpack 插件
 exports.webpack = {
-  enable: true,
+  enable:  true,
   package: 'egg-webpack'
 };
 
 // egg-webpack-vue 插件
 exports.webpackvue = {
-  enable: true,
+  enable:  true,
   package: 'egg-webpack-vue'
 };

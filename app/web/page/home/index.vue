@@ -2,10 +2,9 @@
   <Layout
     description="TeanBlog"
     keywords="blog, vue, webpack, server side render, egg">
-    <div>
-    {{message}}
-    <div class="test"></div>
-    </div>
+    <h1 slot="banner-title">2333</h1>
+    <small slot="banner-title">2333</small>
+    <h2>23333</h2>
   </Layout>
 </template>
 

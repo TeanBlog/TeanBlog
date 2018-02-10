@@ -2,7 +2,7 @@
   <nav class="navigation">
     <ul>
       <li class="current">
-        <a href="#"> 主页 </a>
+                    <a href="#"> 主页 </a>
       </li>
       <li>
         <a href="#"> 博客 </a>

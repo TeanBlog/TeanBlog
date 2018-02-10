@@ -2,6 +2,6 @@
 
 // vue-ssr
 exports.vuessr = {
-  enable: true,
+  enable:  true,
   package: 'egg-view-vue-ssr'
 };

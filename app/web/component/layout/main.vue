@@ -4,9 +4,11 @@
     <main class="content" role="main">
       <article>
         <header class="banner">
-          <h1> TeanBlog </h1>
-          <small>万里不惜死，朝得成功</small>
+          <slot name="banner"></slot>
         </header>
+        <div slot="content">
+          <slot name="main"></slot>
+        </div>
       </article>
     </main>
   </div>

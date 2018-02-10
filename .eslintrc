@@ -1,22 +1,45 @@
 {
-  "extends": "eslint-config-egg",
+  "extends": [
+    "eslint-config-egg"
+  ],
   "parserOptions": {
     "ecmaVersion": 6,
-    "sourceType": "module"
+    "sourceType": "module",
+    "parser": "babel-eslint"
   },
   "rules": {
-    "arrow-parens": "off",
-    "valid-jsdoc": "off",
-    "eol-last": "off",
-    "array-bracket-spacing": "off",
-    "no-unused-vars": "off",
-    "no-else-return": "off",
+    "curly": 2,
+    "eqeqeq": 2,
+    "indent": 2,
+    "use-isnan": 2,
+    "camelcase": 2,
+    "brace-style": 2,
+    "no-redeclare": 2,
+    "default-case": 2,
+    "no-unused-vars": 2,
+    "no-else-return": 2,
+    "linebreak-style": 2,
+    "no-empty-function": 2,
+    "array-bracket-spacing": 2,
+    "no-multiple-empty-lines": 2,
     "strict": "off",
-    "linebreak-style": "off",
-    "no-irregular-whitespace": [
+    "eol-last": "off",
+    "valid-jsdoc": "off",
+    "arrow-parens": "off",
+    "semi": [
+      "error",
+      "always"
+    ],
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "key-spacing": [
       "error",
       {
-        "skipComments": true
+        "beforeColon": false,
+        "afterColon": true,
+        "align": "value"
       }
     ],
     "comma-dangle": [
@@ -24,6 +47,20 @@
       {
         "arrays": "only-multiline",
         "objects": "only-multiline"
+      }
+    ],
+    "no-irregular-whitespace": [
+      "error",
+      {
+        "skipComments": true
+      }
+    ],
+
+    "space-before-function-paren": [
+      "error",
+      {
+        "anonymous": "always",
+        "named": "never"
       }
     ]
   },
@@ -41,6 +78,5 @@
   },
   "plugins": [
     "vue"
-  ],
-  "parser": "babel-eslint"
+  ]
 }

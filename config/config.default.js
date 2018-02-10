@@ -15,6 +15,11 @@ module.exports = app => {
   // middleware
   config.middleware = [];
 
+  // view
+  exports.view = {
+    cache: false
+  };
+
   // vue-ssr
   config.vuessr = {
     layout: path.join(app.baseDir, 'app/web/view/layout.html')

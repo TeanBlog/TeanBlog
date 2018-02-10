@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function(source) {
+module.exports = function () {
   this.cacheable();
   return `
     import render from 'client';

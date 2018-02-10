@@ -3,7 +3,7 @@ import '../filter';
 import '../directive';
 import '../component';
 
-export default function(options) {
+export default function (options) {
   Vue.prototype.$http = require('axios');
 
   if (options.store) {
