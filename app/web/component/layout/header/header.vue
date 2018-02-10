@@ -18,9 +18,9 @@
 </template>
 
 
-<script>
+<script type="text/babel">
 export default {
-  name: "TeanHeader",
+  name: "tean-header",
   data() {
     return {
     }

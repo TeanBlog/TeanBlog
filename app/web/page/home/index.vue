@@ -1,17 +1,22 @@
-<template>
+<template lang="html">
   <Layout
     description="TeanBlog"
     keywords="blog, vue, webpack, server side render, egg">
     <h1 slot="banner-title">2333</h1>
     <small slot="banner-title">2333</small>
-    <h2>23333</h2>
+    <div class="page-content">
+      <h2>管理</h2>
+      <section class="list">
+        <h1>休假制度</h1>
+      </section>
+    </div>
   </Layout>
 </template>
 
-<script>
+<script type="text/babel">
   export default {}
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 @import './index.less';
 </style>

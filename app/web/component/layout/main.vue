@@ -11,15 +11,18 @@
         </div>
       </article>
     </main>
+    <tean-footer></tean-footer>
   </div>
 </template>
 
 <script type="text/babel">
   import TeanHeader from './header/header';
+  import TeanFooter from './footer/footer';
 
   export default {
     components: {
-      TeanHeader
+      TeanHeader,
+      TeanFooter
     }
   }
 </script>
