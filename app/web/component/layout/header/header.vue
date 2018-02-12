@@ -5,10 +5,10 @@
         <a href="/"> 主页 </a>
       </li>
       <li :class="currentUrl === '/blog' ? 'current' : ''">
-        <a href="#"> 博客 </a>
+        <a href="/blog"> 博客 </a>
       </li>
       <li :class="currentUrl === '/archive' ? 'current' : ''">
-        <a href="#"> 归档 </a>
+        <a href="/archive"> 归档 </a>
       </li>
       <li :class="currentUrl === '/about' ? 'current' : ''">
         <a href="/about"> 关于 </a>

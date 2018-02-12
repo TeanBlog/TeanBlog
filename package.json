@@ -8,6 +8,7 @@
     "egg": "^2.3.0",
     "egg-scripts": "^2.5.1",
     "egg-view-vue-ssr": "^3.0.6",
+    "gitalk": "^1.2.2",
     "server-side-render-resource": "^1.0.3",
     "vue": "^2.5.13",
     "vue-router": "^3.0.1",

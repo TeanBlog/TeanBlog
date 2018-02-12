@@ -12,11 +12,18 @@
         </h1>
       </section>
     </div>
+    <tean-comment></tean-comment>
   </Layout>
 </template>
 
 <script type="text/babel">
-  export default {}
+  import TeanComment from '../../component/comment/comment.vue';
+
+  export default {
+    components: {
+      TeanComment
+    }
+  }
 </script>
 
 <style lang="less" scoped>
