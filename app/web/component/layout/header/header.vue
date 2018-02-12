@@ -1,17 +1,17 @@
 <template lang="html">
   <nav class="navigation">
     <ul>
-      <li class="current">
-                    <a href="#"> 主页 </a>
+      <li :class="currentUrl === '/' ? 'current' : ''">
+        <a href="/"> 主页 </a>
       </li>
-      <li>
+      <li :class="currentUrl === '/blog' ? 'current' : ''">
         <a href="#"> 博客 </a>
       </li>
-      <li>
+      <li :class="currentUrl === '/archive' ? 'current' : ''">
         <a href="#"> 归档 </a>
       </li>
-      <li>
-        <a href="#"> 关于 </a>
+      <li :class="currentUrl === '/about' ? 'current' : ''">
+        <a href="/about"> 关于 </a>
       </li>
     </ul>
   </nav>
@@ -21,8 +21,30 @@
 <script type="text/babel">
 export default {
   name: "tean-header",
+
   data() {
     return {
+    }
+  },
+
+  computed: {
+    currentUrl() {
+      return this.getUrlRelativePath();
+    }
+  },
+
+  methods: {
+    getUrlRelativePath() {
+      const url = document.location.toString();
+      const arrUrl = url.split("//");
+      let start = arrUrl[1].indexOf("/");
+      let relUrl = arrUrl[1].substring(start);
+
+      if(relUrl.indexOf('?') !== -1) {
+        relUrl = relUrl.split('?')[0];
+      }
+
+      return relUrl;
     }
   }
 }

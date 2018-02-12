@@ -6,7 +6,7 @@ class HomeController extends Controller {
   async index() {
     const { ctx } = this;
 
-    await ctx.render('home/index.js', { message: 'hi, TeanBlog' });
+    await ctx.render('home/index.js', { message: 'hi, TeanBlog', currentPage: 'home' });
   }
 }
 
