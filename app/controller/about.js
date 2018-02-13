@@ -6,7 +6,7 @@ class AboutController extends Controller {
   async index() {
     const { ctx } = this;
 
-    await ctx.renderClient('about/index.js', { currentPage: 'about' });
+    await ctx.render('about/index.js');
   }
 }
 

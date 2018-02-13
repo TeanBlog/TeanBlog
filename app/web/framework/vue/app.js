@@ -1,10 +1,34 @@
-
 import Vue from 'vue';
-import '../filter';
-import '../directive';
-import '../component';
+import './filter';
+import './directive';
+import './component';
 
-export default function render(options) {
+const App = {};
+
+App.data = () => {
+  return window.__INITIAL_STATE__ || {};
+};
+
+App.init = options => {
+  if (EASY_ENV_IS_NODE) {
+    return App.server(options);
+  }
+  return App.client(options);
+};
+
+
+App.client = options => {
+  Vue.prototype.$http = require('axios');
+  if (options.store) {
+    options.store.replaceState(Object.assign({}, App.data(), options.store.state));
+  } else if (window.__INITIAL_STATE__) {
+    options.data = Object.assign(window.__INITIAL_STATE__, options.data && options.data());
+  }
+  const app = new Vue(options);
+  app.$mount('#app');
+};
+
+App.server = options => {
   if (options.store && options.router) {
     return context => {
       options.router.push(context.state.url);
@@ -32,4 +56,15 @@ export default function render(options) {
       resolve(app);
     });
   };
-}
+};
+
+App.use = component => {
+  Vue.use(component);
+};
+
+App.component = (name, component) => {
+  Vue.component(name, component);
+};
+
+
+export default App;

@@ -29,22 +29,24 @@ export default {
 
   computed: {
     currentUrl() {
-      return this.getUrlRelativePath();
+      return this.getUrlRelativePath() || '';
     }
   },
 
   methods: {
     getUrlRelativePath() {
-      const url = document.location.toString();
-      const arrUrl = url.split("//");
-      let start = arrUrl[1].indexOf("/");
-      let relUrl = arrUrl[1].substring(start);
+      if (process.browser) {
+        const url = document.location.toString();
+        const arrUrl = url.split("//");
+        let start = arrUrl[1].indexOf("/");
+        let relUrl = arrUrl[1].substring(start);
 
-      if(relUrl.indexOf('?') !== -1) {
-        relUrl = relUrl.split('?')[0];
+        if(relUrl.indexOf('?') !== -1) {
+          relUrl = relUrl.split('?')[0];
+        }
+
+        return relUrl;
       }
-
-      return relUrl;
     }
   }
 }

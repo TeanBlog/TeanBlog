@@ -17,13 +17,15 @@
 </template>
 
 <script type="text/babel">
-  import TeanComment from '../../component/comment/comment.vue';
+import TeanComment from 'component/comment/comment.vue'
 
-  export default {
-    components: {
-      TeanComment
-    }
+export default {
+  name: 'tean-about',
+
+  components: {
+    'tean-comment': TeanComment
   }
+}
 </script>
 
 <style lang="less" scoped>

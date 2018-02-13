@@ -6,9 +6,6 @@
 </template>
 
 <script type="text/babel">
-import 'gitalk/dist/gitalk.css'
-import Gitalk from 'gitalk'
-
 export default {
   name: "tean-comment",
 
@@ -18,6 +15,9 @@ export default {
   },
 
   mounted() {
+    require ('gitalk/dist/gitalk.css');
+    const Gitalk = require('gitalk');
+
     const gitalk = new Gitalk({
       clientID: '1918f30b0e5955c3895d',
       clientSecret: 'aafcf204fa93defdde2bb9cabbb31faddbccda4a',

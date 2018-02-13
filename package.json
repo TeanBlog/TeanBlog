@@ -13,6 +13,7 @@
     "vue": "^2.5.13",
     "vue-router": "^3.0.1",
     "vue-server-renderer": "^2.5.13",
+    "vuex": "^3.0.1",
     "vuex-router-sync": "^5.0.0"
   },
   "devDependencies": {
@@ -64,7 +65,7 @@
     "build:dev": "cross-env easy clean && easy build dev",
     "build:test": "cross-env easy clean && easy build test",
     "build:prod": "cross-env easy clean && easy build prod",
-    "start": "node index.js",
+    "start": "node index.js --daemon",
     "dev": "node index.js",
     "start:test": "cross-env EGG_SERVER_ENV=test node index.js",
     "start:prod": "cross-env EGG_SERVER_ENV=prod NODE_ENV=production npm start",

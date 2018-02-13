@@ -16,7 +16,9 @@
 </template>
 
 <script type="text/babel">
-  export default {}
+  export default {
+    name: 'tean-blog'
+  }
 </script>
 
 <style lang="less" scoped>
