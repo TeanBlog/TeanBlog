@@ -10,6 +10,7 @@ app/view/*
 public/
 config/config.local.js
 config/manifest.json
+config/buildConfig.json
 run/
 .DS_Store
 *.sw*
