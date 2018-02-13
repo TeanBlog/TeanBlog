@@ -20,9 +20,11 @@ module.exports = app => {
     cache: false
   };
 
-  // vue-ssr
-  config.vuessr = {
-    layout: path.join(app.baseDir, 'app/web/view/layout.html')
+  exports.vuessr = {
+    layout:        path.join(app.baseDir, 'app/web/view/layout.html'),
+    renderOptions: {
+      basedir: path.join(app.baseDir, 'app/view')
+    }
   };
 
   // static

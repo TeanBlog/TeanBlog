@@ -1,9 +1,5 @@
 <template lang="html">
-  <Layout
-    description="TeanBlog"
-    keywords="blog, vue, webpack, server side render, egg">
-    <h1 slot="banner-title">关于</h1>
-    <small slot="banner-title">2333</small>
+  <div>
     <div class="page-content">
       <h2>管理</h2>
       <section class="list">
@@ -13,17 +9,15 @@
       </section>
     </div>
     <tean-comment></tean-comment>
-  </Layout>
+  </div>
 </template>
 
 <script type="text/babel">
-import TeanComment from 'component/comment/comment.vue'
-
 export default {
   name: 'tean-about',
 
   components: {
-    'tean-comment': TeanComment
+    'tean-comment': () => import('component/comment/comment.vue')
   }
 }
 </script>

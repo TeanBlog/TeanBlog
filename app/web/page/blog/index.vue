@@ -1,7 +1,5 @@
 <template lang="html">
-  <Layout
-    description="TeanBlog"
-    keywords="blog, vue, webpack, server side render, egg">
+  <div>
     <h1 slot="banner-title">博客</h1>
     <small slot="banner-title">2333</small>
     <div class="page-content">
@@ -12,7 +10,7 @@
         </h1>
       </section>
     </div>
-  </Layout>
+  </div>
 </template>
 
 <script type="text/babel">

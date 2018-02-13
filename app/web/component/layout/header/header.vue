@@ -1,17 +1,17 @@
 <template lang="html">
   <nav class="navigation">
     <ul>
-      <li :class="currentUrl === '/' ? 'current' : ''">
-        <a href="/"> 主页 </a>
+      <li>
+        <router-link to="/" exact> 主页 </router-link>
       </li>
-      <li :class="currentUrl === '/blog' ? 'current' : ''">
-        <a href="/blog"> 博客 </a>
+      <li>
+        <router-link to="/blog" exact> 博客 </router-link>
       </li>
-      <li :class="currentUrl === '/archive' ? 'current' : ''">
-        <a href="/archive"> 归档 </a>
+      <li>
+        <router-link to="/archive" exact> 归档 </router-link>
       </li>
-      <li :class="currentUrl === '/about' ? 'current' : ''">
-        <a href="/about"> 关于 </a>
+      <li>
+        <router-link to="/about" exact> 关于 </router-link>
       </li>
     </ul>
   </nav>
@@ -24,29 +24,6 @@ export default {
 
   data() {
     return {
-    }
-  },
-
-  computed: {
-    currentUrl() {
-      return this.getUrlRelativePath() || '';
-    }
-  },
-
-  methods: {
-    getUrlRelativePath() {
-      if (process.browser) {
-        const url = document.location.toString();
-        const arrUrl = url.split("//");
-        let start = arrUrl[1].indexOf("/");
-        let relUrl = arrUrl[1].substring(start);
-
-        if(relUrl.indexOf('?') !== -1) {
-          relUrl = relUrl.split('?')[0];
-        }
-
-        return relUrl;
-      }
     }
   }
 }

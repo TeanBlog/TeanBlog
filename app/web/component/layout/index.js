@@ -3,7 +3,10 @@ import MainLayout from './main';
 const content = `<div id="app">
   <main-layout>
     <div slot="banner">
-      <slot name="banner-title"></slot>
+      <slot name="banner-title">
+        <h1 slot="banner-title">{{vTitle}}</h1>
+        <small slot="banner-title">{{secTitle}}</small>
+      </slot>
     </div>
     <div slot="main">
       <slot></slot>
@@ -28,21 +31,41 @@ const template = `<!DOCTYPE html>
 export default {
   name: 'Layout',
 
-  props: [ 'title', 'description', 'keywords' ],
+  props: {
+    title: {
+      type:    String,
+      default: 'TeanBlog'
+    },
+    secTitle: {
+      type:    String,
+      default: 'TeanBlog'
+    },
+    description: {
+      type:    String,
+      default: 'blog, vue, webpack, SSR, egg'
+    },
+    keywords: {
+      type:    String,
+      default: 'blog, vue, webpack, SSR, egg'
+    }
+  },
 
   components: {
-    MainLayout
+    'main-layout': MainLayout
   },
 
   computed: {
     vTitle() {
-      return this.$root.title || this.title || 'TeanBlog';
+      return this.$root.title || this.title;
     },
     vKeywords() {
-      return this.$root.keywords || this.keywords || 'TeanBlog';
+      return this.$root.keywords || this.keywords;
     },
     vDescription() {
-      return this.$root.description || this.description || 'TeanBlog';
+      return this.$root.description || this.description;
+    },
+    vSecTitle() {
+      return this.$root.secTitle || this.secTitle;
     }
   },
 

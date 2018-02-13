@@ -10,7 +10,6 @@ App.component(Layout.name, Layout);
 sync(store, router);
 
 export default App.init({
-  base: '/',
   ...app,
   router,
   store
