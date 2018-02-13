@@ -4,7 +4,7 @@ const content = `<div id="app">
   <main-layout>
     <div slot="banner">
       <slot name="banner-title">
-        <h1 slot="banner-title">{{currentUrl}}</h1>
+        <h1 slot="banner-title">{{vTitle}}</h1>
         <small slot="banner-title">{{secTitle}}</small>
       </slot>
     </div>
@@ -78,23 +78,6 @@ export default {
         return '关于';
       }
       return 'TeanBlog';
-    }
-  },
-
-  methods: {
-    getUrlRelativePath() {
-      if (process.browser) {
-        const url = document.location.toString();
-        const arrUrl = url.split('//');
-        const start = arrUrl[1].indexOf('/');
-        let relUrl = arrUrl[1].substring(start);
-
-        if (relUrl.indexOf('?') !== -1) {
-          relUrl = relUrl.split('?')[0];
-        }
-
-        return relUrl;
-      }
     }
   },
 
