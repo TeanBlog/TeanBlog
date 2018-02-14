@@ -2,6 +2,7 @@ import Vue from 'vue';
 import './filter';
 import './directive';
 import './component';
+import ProgressBar from '../../component/progressBar.vue';
 
 const App = {};
 
@@ -18,6 +19,11 @@ App.init = options => {
 
 
 App.client = options => {
+  const bar = new Vue(ProgressBar).$mount();
+  if (process.browser) {
+    document.body.appendChild(bar.$el);
+  }
+  Vue.prototype.$bar = bar;
   Vue.prototype.$http = require('axios');
   if (options.store) {
     options.store.replaceState(Object.assign({}, App.data(), options.store.state));

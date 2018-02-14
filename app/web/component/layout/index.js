@@ -4,8 +4,8 @@ const content = `<div id="app">
   <main-layout>
     <div slot="banner">
       <slot name="banner-title">
-        <h1 slot="banner-title">{{vTitle}}</h1>
-        <small slot="banner-title">{{secTitle}}</small>
+        <h1 slot="banner-title">{{vBannerTitle}}</h1>
+        <small slot="banner-title">{{vBannerTitle}}副标题</small>
       </slot>
     </div>
     <div slot="main">
@@ -17,9 +17,9 @@ const content = `<div id="app">
 const template = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>{{title}}</title>
-  <meta name="keywords" :content="keywords">
-  <meta name="description" :content="description">
+  <title>{{vTitle}}</title>
+  <meta name="keywords" :content="vKeywords">
+  <meta name="description" :content="vDescription">
   <meta http-equiv="content-type" content="text/html;charset=utf-8">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
 </head>
@@ -31,24 +31,7 @@ const template = `<!DOCTYPE html>
 export default {
   name: 'Layout',
 
-  props: {
-    title: {
-      type:    String,
-      default: 'TeanBlog'
-    },
-    secTitle: {
-      type:    String,
-      default: 'TeanBlog'
-    },
-    description: {
-      type:    String,
-      default: 'blog, vue, webpack, SSR, egg'
-    },
-    keywords: {
-      type:    String,
-      default: 'blog, vue, webpack, SSR, egg'
-    }
-  },
+  props: [ 'title', 'description', 'keywords' ],
 
   components: {
     'main-layout': MainLayout
@@ -61,12 +44,12 @@ export default {
     vDescription() {
       return this.$root.description || this.description;
     },
-    vSecTitle() {
-      return this.$root.secTitle || this.secTitle;
-    },
     vTitle() {
+      return this.$root.title || this.title;
+    },
+    vBannerTitle() {
       if (this.$route.path === '/') {
-        return 'TeanBlog';
+        return '主页';
       }
       if (this.$route.path === '/blog') {
         return '博客';
@@ -77,7 +60,6 @@ export default {
       if (this.$route.path === '/about') {
         return '关于';
       }
-      return 'TeanBlog';
     }
   },
 

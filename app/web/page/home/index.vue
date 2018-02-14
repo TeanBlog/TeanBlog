@@ -1,7 +1,5 @@
 <template lang="html">
   <div>
-    <h1 slot="banner-title">2333</h1>
-    <small slot="banner-title">2333</small>
     <div class="page-content">
       <h2>管理</h2>
       <section class="list">
@@ -14,12 +12,31 @@
 </template>
 
 <script type="text/babel">
+  const _this = this;
+
   export default {
     name: 'tean-home',
 
-    title: '2333',
+    beforeRouteEnter(to, from, next) {
+      next(vm => {
+        vm.routerLink(() => {
+          setTimeout(() => {
+            vm.$bar.finish();
+          }, 500)
+        })
+      })
+    },
 
-    mounted() {
+    data() {
+      return {
+        $bar: this.$bar
+      }
+    },
+
+    methods: {
+      routerLink() {
+        this.$bar.start()
+      }
     }
   }
 </script>
