@@ -1,5 +1,8 @@
 <template lang="html">
-  <div>
+  <Layout
+    title="TeanBlog"
+    description="TeanBlog"
+    keywords="blog, vue, webpack, server side render, egg">
     <div class="page-content">
       <h2>管理</h2>
       <section class="list">
@@ -8,7 +11,7 @@
         </h1>
       </section>
     </div>
-  </div>
+  </Layout>
 </template>
 
 <script type="text/babel">

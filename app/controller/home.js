@@ -6,9 +6,21 @@ class HomeController extends Controller {
   async index() {
     const { ctx } = this;
 
-    await ctx.render('app/app.js', {
-      url: ctx.url.replace(/\//, '')
-    });
+    const result = await ctx.service.home.get();
+
+    ctx.body = {
+      result
+    };
+  }
+
+  async test() {
+    const dataList = {
+      list: [
+        { id: 1, title: 'this is news 1', url: '/news/1' },
+        { id: 2, title: 'this is news 2', url: '/news/2' }
+      ]
+    };
+    await this.ctx.render('test.tpl', dataList);
   }
 }
 

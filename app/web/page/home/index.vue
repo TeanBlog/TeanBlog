@@ -1,5 +1,10 @@
 <template lang="html">
-  <div>
+  <Layout
+    title="TeanBlog"
+    description="TeanBlog"
+    keywords="blog, vue, webpack, server side render, egg">
+    <h1 slot="banner-title">主页</h1>
+    <small slot="banner-title">主页副标题</small>
     <div class="page-content">
       <h2>管理</h2>
       <section class="list">
@@ -8,36 +13,32 @@
         </h1>
       </section>
     </div>
-  </div>
+  </Layout>
 </template>
 
 <script type="text/babel">
-  const _this = this;
-
   export default {
     name: 'tean-home',
 
-    beforeRouteEnter(to, from, next) {
-      next(vm => {
-        vm.routerLink(() => {
-          setTimeout(() => {
-            vm.$bar.finish();
-          }, 500)
-        })
-      })
-    },
-
     data() {
       return {
-        $bar: this.$bar
       }
     },
 
-    methods: {
-      routerLink() {
-        this.$bar.start()
-      }
-    }
+    // beforeRouteEnter(to, from, next) {
+    //   next(vm => {
+    //     vm.$bar.start();
+    //     setTimeout(() => {
+    //       vm.$bar.finish();
+    //     }, 500)
+    //   })
+    // },
+
+    // data() {
+    //   return {
+    //     $bar: this.$bar
+    //   }
+    // },
   }
 </script>
 

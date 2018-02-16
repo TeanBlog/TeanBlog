@@ -15,22 +15,20 @@ module.exports = app => {
   // middleware
   config.middleware = [];
 
-  // view
-  exports.view = {
-    cache: false
-  };
-
-  exports.vuessr = {
+  // vue-ssr
+  config.vuessr = {
     layout:        path.join(app.baseDir, 'app/web/view/layout.html'),
     renderOptions: {
       basedir: path.join(app.baseDir, 'app/view')
     }
   };
 
-  // static
-  config.static = {
-    prefix: '/public/',
-    dir:    path.join(app.baseDir, 'public')
+  // view
+  config.view = {
+    defaultViewEngine: 'nunjucks',
+    mapping: {
+      '.tpl': 'nunjucks',
+    },
   };
 
   return config;

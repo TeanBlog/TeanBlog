@@ -13,6 +13,13 @@ module.exports = {
       server: 'app/web/framework/vue/entry/server-loader.js',
     }
   },
+  loaders: {
+    eslint: {
+      options: {
+        fix: true
+      }
+    }
+  },
   alias: {
     app:       'app/web/framework/vue/app.js',
     asset:     'app/web/asset',

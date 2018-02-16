@@ -4,8 +4,6 @@ const content = `<div id="app">
   <main-layout>
     <div slot="banner">
       <slot name="banner-title">
-        <h1 slot="banner-title">{{vBannerTitle}}</h1>
-        <small slot="banner-title">{{vBannerTitle}}副标题</small>
       </slot>
     </div>
     <div slot="main">
@@ -46,20 +44,6 @@ export default {
     },
     vTitle() {
       return this.$root.title || this.title;
-    },
-    vBannerTitle() {
-      if (this.$route.path === '/') {
-        return '主页';
-      }
-      if (this.$route.path === '/blog') {
-        return '博客';
-      }
-      if (this.$route.path === '/archive') {
-        return '归档';
-      }
-      if (this.$route.path === '/about') {
-        return '关于';
-      }
     }
   },
 

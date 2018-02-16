@@ -6,6 +6,7 @@ Vue.use(VueRouter);
 
 const TeanHome = () => import('../page/home');
 const TeanAbout = () => import('../page/about');
+const Admin = () => import('../page/admin/layout');
 
 
 const router = new VueRouter({
@@ -14,7 +15,8 @@ const router = new VueRouter({
   base:            '/',
   routes:          [
     { path: '/', component: TeanHome },
-    { path: '/about', component: TeanAbout }
+    { path: '/about', component: TeanAbout },
+    { path: '/admin', component: Admin }
   ]
 });
 
