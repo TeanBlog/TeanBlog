@@ -12,7 +12,7 @@ const Admin = () => import('../page/admin/layout');
 const router = new VueRouter({
   mode:            'history',
   linkActiveClass: 'current',
-  base:            '/',
+  base:            '/admin/',
   routes:          [
     { path: '/', component: TeanHome },
     { path: '/about', component: TeanAbout },

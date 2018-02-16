@@ -11,6 +11,7 @@ App.component(Layout.name, Layout);
 sync(store, router);
 
 export default App.init({
+  base: '/admin',
   ...app,
   router,
   store

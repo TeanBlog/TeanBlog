@@ -2,7 +2,7 @@
 
 const Controller = require('egg').Controller;
 
-class IndexController extends Controller {
+class IndexRenderController extends Controller {
   async home() {
     const { ctx } = this;
 
@@ -17,4 +17,4 @@ class IndexController extends Controller {
   }
 }
 
-module.exports = IndexController;
+module.exports = IndexRenderController;
