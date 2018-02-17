@@ -15,20 +15,6 @@ module.exports = app => {
   // middleware
   config.middleware = [];
 
-  // vue-ssr
-  config.vuessr = {
-    layout:        path.join(app.baseDir, 'app/web/view/layout.html'),
-    renderOptions: {
-      basedir: path.join(app.baseDir, 'app/view')
-    }
-  };
-
-  config.static = {
-    maxAge: 0,
-    prefix: '/public/',
-    dir: path.join(app.baseDir, 'app/public')
-  };
-
   // view
   config.view = {
     defaultViewEngine: 'nunjucks',

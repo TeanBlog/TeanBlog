@@ -1,6 +1,5 @@
 coverage/
 node_modules/
-app/web/asset/
 app/view/
 public/
 config/manifest.json
