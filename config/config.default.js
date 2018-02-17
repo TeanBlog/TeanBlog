@@ -23,6 +23,12 @@ module.exports = app => {
     }
   };
 
+  config.static = {
+    maxAge: 0,
+    prefix: '/public/',
+    dir: path.join(app.baseDir, 'app/public')
+  };
+
   // view
   config.view = {
     defaultViewEngine: 'nunjucks',

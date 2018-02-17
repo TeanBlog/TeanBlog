@@ -6,11 +6,11 @@ exports.vuessr = {
   package: 'egg-view-vue-ssr'
 };
 
-// Sequelize
-exports.sequelize = {
-  enable:  true,
-  package: 'egg-sequelize'
-};
+// // Sequelize
+// exports.sequelize = {
+//   enable:  true,
+//   package: 'egg-sequelize'
+// };
 
 // nunjucks
 exports.nunjucks = {

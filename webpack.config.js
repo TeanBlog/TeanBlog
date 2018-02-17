@@ -13,6 +13,7 @@ module.exports = {
       server: 'app/web/framework/vue/entry/server-loader.js',
     }
   },
+  buildPath: 'app/public/',
   loaders: {
     eslint: {
       options: {

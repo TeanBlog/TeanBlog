@@ -5,18 +5,14 @@ Vue.use(VueRouter);
 
 
 const TeanHome = () => import('../page/home');
-const TeanAbout = () => import('../page/about');
-const Admin = () => import('../page/admin/layout');
 
 
 const router = new VueRouter({
   mode:            'history',
   linkActiveClass: 'current',
-  base:            '/admin/',
+  base:            '/admin',
   routes:          [
-    { path: '/', component: TeanHome },
-    { path: '/about', component: TeanAbout },
-    { path: '/admin', component: Admin }
+    { path: '/', component: TeanHome }
   ]
 });
 
