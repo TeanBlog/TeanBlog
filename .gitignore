@@ -14,3 +14,5 @@ run/
 .DS_Store
 *.sw*
 *.un~
+.cache/
+dist/
