@@ -2,7 +2,7 @@
 
 const Controller = require('egg').Controller;
 
-class IndexRenderController extends Controller {
+class IndexController extends Controller {
   async home() {
     const { ctx } = this;
 
@@ -13,8 +13,8 @@ class IndexRenderController extends Controller {
       }
     };
 
-    await this.ctx.render('render/page/home.tpl', mockData);
+    await this.ctx.render('page/tean/home.tpl', mockData);
   }
 }
 
-module.exports = IndexRenderController;
+module.exports = IndexController;

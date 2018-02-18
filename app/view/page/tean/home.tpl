@@ -1,11 +1,11 @@
-{% import "../layout/meta.tpl" as metaTemp %}
-{% import "../layout/header.tpl" as headerTemp %}
-{% import "../components/banner.tpl" as bannerTemp %}
+{% import "../../layout/tean/meta.tpl" as metaTemp %}
+{% import "../../layout/tean/header.tpl" as headerTemp %}
+{% import "../../components/tean/banner.tpl" as bannerTemp %}
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  {{ metaTemp.value("主页", "233", "2333") }}
+  {{ metaTemp.value("主页", "Blog, TeanBlog", "A minimalist style blog based on Egg.js & Vue.js") }}
 </head>
 <body>
   {{ headerTemp.current(1) }}
@@ -22,7 +22,7 @@
         </div>
       </article>
     </main>
-  {% include "../layout/footer.tpl" %}
-  {% include "../layout/script.tpl" %}
+  {% include "../../layout/tean/footer.tpl" %}
+  {% include "../../layout/script.tpl" %}
 </body>
 </html>

@@ -23,5 +23,31 @@ module.exports = app => {
     },
   };
 
+  // cluster
+  config.cluster = {
+    listen: {
+      port: 7001,
+      hostname: '127.0.0.1',
+    }
+  }
+
+  // session
+  config.session = {
+    key: 'TEAN_SESS',
+    maxAge: 24 * 3600 * 1000, // 1 天
+    httpOnly: true,
+    encrypt: true,
+  };
+
+  // sequelize
+  config.sequelize = {
+    dialect: 'mysql', // support: mysql, mariadb, postgres, mssql
+    database: 'TeanBlog',
+    host: '127.0.0.1',
+    port: '3306',
+    username: 'root',
+    password: '',
+  };
+
   return config;
 };
