@@ -5,6 +5,6 @@
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
   <title>{{ title }}</title>
   <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/public/css/admin/common-b5bbf2388a.css">
-  <link rel="stylesheet" href="/public/css/admin/login-90f9712011.css">
+  <link rel="stylesheet" href="/public/css/admin/common.css">
+  <link rel="stylesheet" href="/public/css/admin/login.css">
 {% endmacro %}

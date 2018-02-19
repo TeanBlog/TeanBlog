@@ -23,18 +23,16 @@ module.exports = app => {
     password: {
       allowNull: false,
       type: STRING,
-      comment: '管理员密码, 使用MD5加密',
+      comment: '管理员密码, 加密',
     },
     created_at: {
       allowNull: false,
       type: DATE,
-      defaultValue: new Date().toLocaleString(),
       comment: '创建日期',
     },
     updated_at: {
       allowNull: false,
       type: DATE,
-      defaultValue: new Date().toLocaleString(),
       comment: '更新日期',
     },
   }, { timestamps: false });

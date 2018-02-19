@@ -4,5 +4,5 @@
   <meta http-equiv="content-type" content="text/html;charset=utf-8">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
   <title>{{ title }}</title>
-  <link rel="stylesheet" href="/public/css/tean/app-b2e40bb57b.css">
+  <link rel="stylesheet" href="/public/css/tean/app.css">
 {% endmacro %}

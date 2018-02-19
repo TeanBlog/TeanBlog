@@ -3,27 +3,31 @@
 const gulp = require('gulp');
 const less = require('gulp-less');
 const minifyCSS = require('gulp-minify-css');
-const rev = require('gulp-rev');
-const revCollector = require('gulp-rev-collector');
+const uglify = require('gulp-uglify');
+const babel = require('gulp-babel');
+// const rev = require('gulp-rev');
+// const revCollector = require('gulp-rev-collector');
 
 gulp.task('less', () => {
   gulp.src([ 'app/public/_less/**/*.less', '!app/public/_less/tean/theme/**' ])
     .pipe(less())
     .pipe(minifyCSS())
-    .pipe(rev())
-    .pipe(rev.manifest())
-    .pipe(gulp.dest('app/public/css/rev'))
+    // .pipe(rev())
+    // .pipe(rev.manifest())
+    // .pipe(gulp.dest('app/public/css/rev'))
     .pipe(gulp.dest('app/public/css'));
 });
 
-gulp.task('rev', function() {
-  gulp.src([ 'app/public/css/rev/*.json', 'app/view/**/*.tpl' ])
-    .pipe(revCollector())
-    .pipe(gulp.dest('app/view/'));
+gulp.task('es6', () => {
+  gulp.src([ 'app/public/_es6/**/*.js' ])
+    .pipe(babel())
+    .pipe(uglify())
+    .pipe(gulp.dest('app/public/js'));
 });
 
 gulp.task('auto', () => {
   gulp.watch('app/public/_less/**/*.less', [ 'less' ]);
+  gulp.watch('app/public/_es6/**/*.js', [ 'es6' ]);
 });
 
-gulp.task('default', [ 'less', 'auto', 'rev' ]);
+gulp.task('default', [ 'less', 'es6', 'auto' ]);

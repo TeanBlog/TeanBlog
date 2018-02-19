@@ -12,7 +12,10 @@ module.exports = app => {
   config.keys = app.name + '123456';
 
   // middleware
-  config.middleware = [];
+  config.middleware = [
+    'responseHandler',
+    'errorHandler',
+  ];
 
   // view
   config.view = {
@@ -48,6 +51,24 @@ module.exports = app => {
     port: '3306',
     username: 'root',
     password: '',
+  };
+
+  // response_hander
+  config.responseHandler = {
+    enable: true,
+    match: [
+      /\/api/,
+    ],
+  };
+
+  // jwt
+  config.jwt = {
+    enable: true,
+    key: 'user',
+    match: [
+      /\/api/,
+      /(?!.*\/login)^.*$/
+    ],
   };
 
   return config;
