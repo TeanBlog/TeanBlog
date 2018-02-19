@@ -3,7 +3,7 @@
 {% import "../../components/tean/banner.tpl" as bannerTemp %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cn">
 <head>
   {{ metaTemp.value("主页", "Blog, TeanBlog", "A minimalist style blog based on Egg.js & Vue.js") }}
 </head>

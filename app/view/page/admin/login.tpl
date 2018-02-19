@@ -2,9 +2,10 @@
 {% import "../../layout/admin/script.tpl" as scriptImport %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cn">
 <head>
   {{ metaTemp.value("TeanBlog | 登录", "Blog, TeanBlog", "A minimalist style blog based on Egg.js") }}
+  <link rel="stylesheet" href="/public/css/admin/login.css">
 </head>
 <body>
   <div class="container">

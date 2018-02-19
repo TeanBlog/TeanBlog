@@ -6,5 +6,4 @@
   <title>{{ title }}</title>
   <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="/public/css/admin/common.css">
-  <link rel="stylesheet" href="/public/css/admin/login.css">
 {% endmacro %}
