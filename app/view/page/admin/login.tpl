@@ -16,13 +16,13 @@
       <input type="password" id="password" class="form-control" placeholder="密码">
       <div class="form-login__checkbox">
         <label>
-          <input type="checkbox" value="remember-me"> 记住我
+          <input type="checkbox" id="rememberMe"> 记住我
         </label>
       </div>
-      <button class="btn btn-lg btn-primary btn-block" type="submit" onsubmit="return false;">登录</button>
+      <button class="btn btn-lg btn-primary btn-block">登录</button>
     </form>
   </div>
-  <div class="alert alert-danger" data-dismiss="alert" role="alert">
+  <div class="center alert alert-danger" role="alert">
     This is a primary alert—check it out!
   </div>
   {% include "../../layout/script.tpl" %}

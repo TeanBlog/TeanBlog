@@ -11,6 +11,7 @@
     "egg-view-nunjucks": "^2.1.4",
     "jsonwebtoken": "^8.1.1",
     "koa-jwt": "^3.3.0",
+    "ms": "^2.1.1",
     "mysql2": "^1.5.2",
     "uuid": "^3.2.1"
   },

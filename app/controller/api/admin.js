@@ -1,6 +1,7 @@
 'use strict';
 
 const jwt = require('jsonwebtoken');
+const ms = require('ms');
 const Controller = require('egg').Controller;
 
 class AdminController extends Controller {
@@ -11,11 +12,18 @@ class AdminController extends Controller {
     const isAuthenticated = await ctx.service.admin.findByLogin(model);
 
     if (isAuthenticated) {
+      let cookieMxAgems = ms('1d');
+
+      if (model.rememberMe) {
+        cookieMxAgems = ms('30d')
+      }
+
       const cookieValue = 'Bearer ' + jwt.sign({
-        exp: Math.floor(Date.now() / 1000) + (24 * 60 * 60),
+        exp: cookieMxAgems
       }, ctx.app.config.jwt.secret);
 
       ctx.cookies.set('TEAN_KEY', cookieValue, {
+        maxAge: cookieMxAgems,
         httpOnly: false,
         signed: false,
       });

@@ -67,7 +67,7 @@ module.exports = app => {
     key: 'user',
     match: [
       /\/api/,
-      /(?!.*\/login)^.*$/
+      /(?!.*\/login)^.*$/,
     ],
   };
 
