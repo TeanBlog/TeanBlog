@@ -14,12 +14,12 @@ class AdminController extends Controller {
     if (isAuthenticated) {
       let cookieMxAgems = ms('1d');
 
-      if (model.rememberMe) {
-        cookieMxAgems = ms('30d')
+      if (model.rememberMe === 'true') {
+        cookieMxAgems = ms('30d');
       }
 
       const cookieValue = 'Bearer ' + jwt.sign({
-        exp: cookieMxAgems
+        exp: cookieMxAgems,
       }, ctx.app.config.jwt.secret);
 
       ctx.cookies.set('TEAN_KEY', cookieValue, {
