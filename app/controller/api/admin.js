@@ -22,7 +22,7 @@ class AdminController extends Controller {
         exp: cookieMxAgems,
       }, ctx.app.config.jwt.secret);
 
-      ctx.cookies.set('TEAN_KEY', cookieValue, {
+      ctx.cookies.set('TEAN_ADMIN', cookieValue, {
         maxAge: cookieMxAgems,
         httpOnly: false,
         signed: false,
