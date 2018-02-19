@@ -8,4 +8,7 @@ module.exports = app => {
 
   router.get('/', controller.render.index.home);
   router.get('/admin/login', controller.render.admin.login);
+
+  // RESTful API
+  router.post('/api/admin/login', controller.api.admin.login);
 };

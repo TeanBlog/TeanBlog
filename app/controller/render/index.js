@@ -9,11 +9,11 @@ class IndexController extends Controller {
     const mockData = {
       banner: {
         title: '主页',
-        secTitle: '主页副标题'
-      }
+        secTitle: '主页副标题',
+      },
     };
 
-    await this.ctx.render('page/tean/home.tpl', mockData);
+    await ctx.render('page/tean/home.tpl', mockData);
   }
 }
 

@@ -7,7 +7,6 @@
  */
 module.exports = app => {
   const config = exports = {};
-  const path = require('path');
 
   // appKey (example)
   config.keys = app.name + '123456';
@@ -28,15 +27,17 @@ module.exports = app => {
     listen: {
       port: 7001,
       hostname: '127.0.0.1',
-    }
-  }
+    },
+  };
 
-  // session
-  config.session = {
-    key: 'TEAN_SESS',
-    maxAge: 24 * 3600 * 1000, // 1 天
-    httpOnly: true,
-    encrypt: true,
+  // security
+  config.security = {
+    methodnoallow: {
+      enable: false,
+    },
+    csrf: {
+      enable: false,
+    },
   };
 
   // sequelize
