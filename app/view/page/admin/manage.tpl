@@ -21,50 +21,41 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>2018-02-18 17:30:08</td>
-              <td>2018-02-18 17:30:08</td>
-              <td>Nginx: 413 Request Entity Too Large 解决方案</td>
-              <td class="table-action-btn__wrapper">
-                <button type="button" class="table-action-btn btn btn-primary">编辑</button>
-              </td>
-              <td class="table-action-btn__wrapper">
-                <button type="button" class="table-action-btn btn btn-danger">删除</button>
-              </td>
-            </tr>
-            <tr>
-              <td>2018-02-18 17:30:08</td>
-              <td>2018-02-18 17:30:08</td>
-              <td>Nginx: 413 Request Entity Too Large 解决方案</td>
-              <td class="table-action-btn__wrapper">
-                <button type="button" class="table-action-btn btn btn-primary">编辑</button>
-              </td>
-              <td class="table-action-btn__wrapper">
-                <button type="button" class="table-action-btn btn btn-danger">删除</button>
-              </td>
-            </tr>
+            {% for article in resourceData.rows %}
+              <tr>
+                <td>{{ article.created_at_beauty }}</td>
+                <td>{{ article.updated_at_beauty }}</td>
+                <td>{{ article.title | truncate(15) }}</td>
+                <td class="table-action-btn__wrapper">
+                  <button type="button" class="table-action-btn btn btn-primary">编辑</button>
+                </td>
+                <td class="table-action-btn__wrapper">
+                  <button type="button" class="table-action-btn btn btn-danger">删除</button>
+                </td>
+              </tr>
+            {% endfor %}
           </tbody>
         </table>
       </div>
-      <nav>
-        <ul class="pagination">
-          <li class="page-item disabled">
-            <a class="page-link" href="#" tabindex="-1">上一页</a>
-          </li>
-          <li class="page-item active">
-            <a class="page-link" href="#">1</a>
-          </li>
-          <li class="page-item">
-            <a class="page-link" href="#">2</a>
-          </li>
-          <li class="page-item">
-            <a class="page-link" href="#">3</a>
-          </li>
-          <li class="page-item">
-            <a class="page-link" href="#">下一页</a>
-          </li>
-        </ul>
-      </nav>
+      {% if resourceData.count > 10 %}
+        <nav>
+          <ul class="pagination">
+            <li class="page-item {{ "disabled" if resourceData.current === 1 else "" }}">
+              <a class="page-link" href="/admin/article/manage/{{ resourceData.current - 1 }}">
+                上一页
+              </a>
+            </li>
+            <li class="page-item active">
+              <span class="page-link">{{ resourceData.current }}</span>
+            </li>
+            <li class="page-item {{ "disabled" if resourceData.current >= resourceData.count / 10 else "" }}">
+              <a class="page-link" href="/admin/article/manage/{{ resourceData.current + 1 }}">
+                下一页
+              </a>
+            </li>
+          </ul>
+        </nav>
+      {% endif %}
     </section>
   {% include "../../layout/admin/footer.tpl" %}
   {% include "../../layout/script.tpl" %}

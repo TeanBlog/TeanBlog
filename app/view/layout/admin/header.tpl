@@ -16,10 +16,10 @@
             <a class="nav-link" href="/admin/article/new">撰写文章</a>
           </li>
           <li class="nav-item {{ "active" if tab === 3 else "" }}">
-            <a class="nav-link" href="/admin/article/manage">文章管理</a>
+            <a class="nav-link" href="/admin/article/manage/1">文章管理</a>
           </li>
         </ul>
-        <a class="nav-link logout-btn" href="#">登出</a>
+        <a class="nav-link logout-btn" href="javascript:;">登出</a>
       </div>
     </nav>
   </header>

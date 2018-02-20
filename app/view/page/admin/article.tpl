@@ -12,15 +12,18 @@
 <body>
   {{ headerTemp.current(2) }}
     <section class="container admin-panel">
-      <div class="center alert alert-danger" role="alert"></div>
+      <div class="alert alert-danger" role="alert"></div>
+      <div class="alert alert-info" role="alert"></div>
+      <div class="alert alert-warning" role="alert"></div>
+      <div class="alert alert-success" role="alert"></div>
       <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="文章标题">
+        <input type="text" id="article-title" class="form-control" placeholder="文章标题">
         <div class="input-group-append">
           <button id="article-save" class="btn btn-primary" type="button">保存</button>
         </div>
       </div>
       <div id="editormd">
-        <textarea style="display:none;"></textarea>
+        <textarea id="article-content" style="display:none;"></textarea>
       </div>
     </section>
   {% include "../../layout/admin/footer.tpl" %}

@@ -7,13 +7,11 @@ class ArticleController extends Controller {
     const { ctx } = this;
     const model = ctx.request.body;
 
-    console.log(model.title, 11111111111111111111111111)
-
-    const result = await ctx.service.article.insertOne(model);
+    await ctx.service.article.insertOne(model);
 
     ctx.body = {
-      data: result
-    }
+      msg: '新增成功',
+    };
     ctx.status = 201;
   }
 }

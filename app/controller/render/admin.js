@@ -23,8 +23,13 @@ class AdminController extends Controller {
 
   async manage() {
     const { ctx } = this;
+    const page = Number(ctx.params.page);
+    const size = 10; // 默认
 
-    await ctx.render('page/admin/manage.tpl');
+    const resourceData = await ctx.service.article.findAll(page, size);
+    resourceData.current = page;
+
+    await ctx.render('page/admin/manage.tpl', { resourceData: resourceData });
   }
 }
 

@@ -31,7 +31,7 @@ class AdminController extends Controller {
       });
 
       ctx.body = {
-        cookie: cookieValue
+        cookie: cookieValue,
       };
       ctx.status = 200;
     } else {
@@ -46,8 +46,8 @@ class AdminController extends Controller {
     const { ctx } = this;
 
     ctx.body = {
-      msg: '鉴权成功'
-    }
+      msg: '鉴权成功',
+    };
     ctx.status = 200;
   }
 }

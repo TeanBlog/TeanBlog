@@ -54,7 +54,7 @@ module.exports = app => {
     password: '',
     charset: 'utf8',
     dialectOptions: {
-      collate: 'utf8_general_ci'
+      collate: 'utf8_general_ci',
     },
   };
 

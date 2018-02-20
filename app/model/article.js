@@ -31,6 +31,16 @@ module.exports = app => {
       type: DATE,
       comment: '更新日期',
     },
+    created_at_beauty: {
+      allowNull: false,
+      type: STRING,
+      comment: '创建日期(美化)',
+    },
+    updated_at_beauty: {
+      allowNull: false,
+      type: STRING,
+      comment: '更新日期(美化)',
+    },
   }, { timestamps: false });
 
   return Article;

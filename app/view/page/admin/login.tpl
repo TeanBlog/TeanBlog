@@ -23,7 +23,11 @@
       <button class="btn btn-lg btn-primary btn-block">登录</button>
     </form>
   </div>
-  <div class="center alert alert-danger alert-top" role="alert"></div>
+  <div class="alert alert-danger alert-top" role="alert"></div>
+  <div class="alert alert-info alert-top" role="alert"></div>
+  <div class="alert alert-warning alert-top" role="alert"></div>
+  <div class="alert alert-success alert-top" role="alert"></div>
+  <div class="alert alert-danger alert-top" role="alert"></div>
   {% include "../../layout/script.tpl" %}
   {{ scriptImport.import("login") }}
 </body>
