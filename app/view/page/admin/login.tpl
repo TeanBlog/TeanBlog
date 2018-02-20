@@ -23,9 +23,7 @@
       <button class="btn btn-lg btn-primary btn-block">登录</button>
     </form>
   </div>
-  <div class="center alert alert-danger" role="alert">
-    This is a primary alert—check it out!
-  </div>
+  <div class="center alert alert-danger alert-top" role="alert"></div>
   {% include "../../layout/script.tpl" %}
   {{ scriptImport.import("login") }}
 </body>

@@ -12,10 +12,11 @@
 <body>
   {{ headerTemp.current(2) }}
     <section class="container admin-panel">
+      <div class="center alert alert-danger" role="alert"></div>
       <div class="input-group mb-3">
         <input type="text" class="form-control" placeholder="文章标题">
         <div class="input-group-append">
-          <button class="btn btn-primary" type="button">保存</button>
+          <button id="article-save" class="btn btn-primary" type="button">保存</button>
         </div>
       </div>
       <div id="editormd">

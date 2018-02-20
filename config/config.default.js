@@ -52,13 +52,17 @@ module.exports = app => {
     port: '3306',
     username: 'root',
     password: '',
+    charset: 'utf8',
+    dialectOptions: {
+      collate: 'utf8_general_ci'
+    },
   };
 
   // response_hander
   config.responseHandler = {
     enable: true,
     match: [
-      'api',
+      /\/api\//,
     ],
   };
 
