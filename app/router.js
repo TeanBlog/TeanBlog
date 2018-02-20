@@ -11,6 +11,7 @@ module.exports = app => {
   router.get('/admin/home', controller.render.admin.home);
   router.get('/admin/article/new', controller.render.admin.article);
   router.get('/admin/article/edit/:id', controller.render.admin.article);
+  router.get('/admin/article/manage', controller.render.admin.manage);
 
   // RESTful API
   router.post('/api/admin/login', controller.api.admin.login);

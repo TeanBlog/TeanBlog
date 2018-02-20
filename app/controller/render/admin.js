@@ -20,6 +20,12 @@ class AdminController extends Controller {
 
     await ctx.render('page/admin/article.tpl');
   }
+
+  async manage() {
+    const { ctx } = this;
+
+    await ctx.render('page/admin/manage.tpl');
+  }
 }
 
 module.exports = AdminController;
