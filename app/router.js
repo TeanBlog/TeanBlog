@@ -15,5 +15,5 @@ module.exports = app => {
 
   // RESTful API
   router.post('/api/admin/auth', controller.api.admin.auth);
-  router.post('/api/admin/login', controller.api.admin.login);
+  router.post('/api/login', controller.api.admin.login);
 };

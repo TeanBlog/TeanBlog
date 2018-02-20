@@ -66,7 +66,7 @@ module.exports = app => {
   config.jwt = {
     enable: true,
     match: [
-      /(?!.*\/login|\/admin)^.*$/,
+      /\/api\/admin/,
     ],
   };
 
