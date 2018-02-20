@@ -7,6 +7,7 @@
   {% endif %}
 
   {% if value === "article" %}
+    <script src="/public/js/admin/auth.js"></script>
     <script src="/public/lib/editormd.min.js"></script>
     <script src="/public/js/admin/article.js"></script>
   {% endif %}

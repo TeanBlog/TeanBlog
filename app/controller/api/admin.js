@@ -12,23 +12,27 @@ class AdminController extends Controller {
     const isAuthenticated = await ctx.service.admin.findByLogin(model);
 
     if (isAuthenticated) {
-      let cookieMxAgems = ms('1d');
+      let cookieMxAge = ms('1d');
+      let jwtMxAge = Math.floor(Date.now() / 1000) + (60 * 60 * 24);
 
       if (model.rememberMe === 'true') {
-        cookieMxAgems = ms('30d');
+        cookieMxAge = ms('30d');
+        jwtMxAge = Math.floor(Date.now() / 1000) + (60 * 60 * 30 * 24);
       }
 
       const cookieValue = 'Bearer ' + jwt.sign({
-        exp: cookieMxAgems,
+        exp: jwtMxAge,
       }, ctx.app.config.jwt.secret);
 
       ctx.cookies.set('TEAN_ADMIN', cookieValue, {
-        maxAge: cookieMxAgems,
+        maxAge: cookieMxAge,
         httpOnly: false,
         signed: false,
       });
 
-      ctx.body = {};
+      ctx.body = {
+        cookie: cookieValue
+      };
       ctx.status = 200;
     } else {
       ctx.body = {
@@ -36,6 +40,15 @@ class AdminController extends Controller {
       };
       ctx.status = 401;
     }
+  }
+
+  async auth() {
+    const { ctx } = this;
+
+    ctx.body = {
+      msg: '鉴权成功'
+    }
+    ctx.status = 200;
   }
 }
 

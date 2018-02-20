@@ -15,6 +15,7 @@ module.exports = app => {
   config.middleware = [
     'responseHandler',
     'errorHandler',
+    'jwt',
   ];
 
   // view
@@ -57,17 +58,15 @@ module.exports = app => {
   config.responseHandler = {
     enable: true,
     match: [
-      /\/api/,
+      'api',
     ],
   };
 
   // jwt
   config.jwt = {
     enable: true,
-    key: 'user',
     match: [
-      /\/api/,
-      /(?!.*\/login)^.*$/,
+      /(?!.*\/login|\/admin)^.*$/,
     ],
   };
 
