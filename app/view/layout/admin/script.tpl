@@ -5,4 +5,9 @@
   {% if value === "login" %}
     <script src="/public/js/admin/login.js"></script>
   {% endif %}
+
+  {% if value === "article" %}
+    <script src="/public/lib/editormd.min.js"></script>
+    <script src="/public/js/admin/article.js"></script>
+  {% endif %}
 {% endmacro %}

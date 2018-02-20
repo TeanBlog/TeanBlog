@@ -10,7 +10,7 @@
 <body>
   <div class="container">
     <form id="login-form" class="form-login" novalidate>
-      <img class="form-login__logo" src="/public/img/logo-black.png" alt="teanblog-logo">
+      <img class="form-login__logo" src="/public/images/logo-black.png" alt="teanblog-logo">
       <label for="email" class="sr-only">邮箱地址</label>
       <input type="email" id="email" class="form-control" placeholder="邮箱地址">
       <label for="password" class="sr-only">密码</label>
