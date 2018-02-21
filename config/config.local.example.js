@@ -7,19 +7,18 @@
  */
 module.exports = app => {
   const config = exports = {};
-  const EasyWebpack = require('easywebpack-vue');
 
-  config.keys = app.name + '你的 appKey';
+  config.keys = app.name + '你的 key';
 
-  // webpack
-  exports.webpack = {
-    webpackConfigList: EasyWebpack.getWebpackConfig(),
+  // squelize
+  config.sequelize = {
+    username: '你的数据库账号',
+    password: '你的数据库密码',
   };
 
-  // development
-  exports.development = {
-    watchDirs: [ 'build' ], // 指定监视的目录（包括子目录），当目录下的文件变化的时候自动重载应用，路径从项目根目录开始写
-    ignoreDirs: [ 'app/web', 'public', 'config' ], // 指定过滤的目录（包括子目录）
+  // jwt
+  config.jwt = {
+    secret: '你的 jwt 秘钥',
   };
 
   return config;
