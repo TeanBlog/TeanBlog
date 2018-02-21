@@ -6,7 +6,7 @@ package-lock.json
 yarn.lock
 coverage/
 .idea/
-public/
+/public/
 migrations/
 config/config.local.js
 config/manifest.json
