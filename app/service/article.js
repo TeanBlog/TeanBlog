@@ -21,16 +21,40 @@ class ArticleService extends Service {
 
   async findAll(page, size) {
     const { ctx } = this;
+    let result = {};
 
-    const result = await ctx.model.Article.findAndCountAll({
-      attributes: {
-        exclude: ['content']
+    if (page && size) {
+      result = await ctx.model.Article.findAndCountAll({
+        attributes: {
+          exclude: ['content']
+        },
+        order: [
+          ['updated_at', 'DESC'],
+        ],
+        offset: (page - 1) * size,
+        limit: size
+      });
+    } else {
+      result = await ctx.model.Article.findAndCountAll({
+        attributes: {
+          exclude: ['content']
+        },
+        order: [
+          ['updated_at', 'DESC'],
+        ]
+      });
+    }
+
+    return result;
+  }
+
+  async findById(id) {
+    const { ctx } = this;
+
+    const result = await ctx.model.Article.findOne({
+      where: {
+        id: id,
       },
-      order: [
-        ['updated_at', 'DESC'],
-      ],
-      offset: (page - 1) * size,
-      limit: size
     });
 
     return result;

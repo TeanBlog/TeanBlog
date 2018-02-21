@@ -1,7 +1,7 @@
 {
   "name": "teanblog",
   "version": "1.0.0",
-  "description": "A minimalist style blog based on Egg.js & Vue.js",
+  "description": "A minimalist style blog based on Egg.js",
   "private": true,
   "dependencies": {
     "bcrypt": "^1.0.3",
@@ -11,6 +11,7 @@
     "egg-view-nunjucks": "^2.1.4",
     "jsonwebtoken": "^8.1.1",
     "koa-jwt": "^3.3.0",
+    "marked": "^0.3.16",
     "moment": "^2.20.1",
     "ms": "^2.1.1",
     "mysql2": "^1.5.2",

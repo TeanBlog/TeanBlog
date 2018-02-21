@@ -5,15 +5,14 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
-  {{ metaTemp.value("TeanBlog | 主页", "Blog, TeanBlog", "A minimalist style blog based on Egg.js") }}
+  {{ metaTemp.value("TeanBlog | 博客", "Blog, TeanBlog", "A minimalist style blog based on Egg.js") }}
 </head>
 <body>
-  {{ headerTemp.current(1) }}
+  {{ headerTemp.current(2) }}
     <main class="content" role="main">
       <article>
-        {{ bannerTemp.value(title if resourceData.bannerTitle else "TeanBlog", title if resourceData.bannerSecTitle else "基于 Egg.js 的简约博客系统") }}
+        {{ bannerTemp.value(title if resourceData.bannerTitle else "博客", title if resourceData.bannerSecTitle else "基于 Egg.js 的简约博客系统") }}
         <div class="page-content">
-          <h2>最新文章</h2>
           <section class="list">
             {% if resourceData.articles.length === 0 %}
               <h1>

@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
-  {{ metaTemp.value("TeanBlog | 主页管理", "Blog, TeanBlog", "A minimalist style blog based on Egg.js & Vue.js") }}
+  {{ metaTemp.value("TeanBlog | 主页管理", "Blog, TeanBlog", "A minimalist style blog based on Egg.js") }}
   <link rel="stylesheet"href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="/public/css/admin/home.css">
 </head>
