@@ -22,4 +22,6 @@ module.exports = app => {
   router.post('/api/login', controller.api.admin.login);
   router.post('/api/admin/auth', controller.api.admin.auth);
   router.post('/api/admin/article/add', controller.api.article.add);
+  router.delete('/api/admin/article', controller.api.article.delete);
+  router.patch('/api/admin/article', controller.api.article.update);
 };

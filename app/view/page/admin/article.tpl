@@ -17,13 +17,15 @@
       <div class="alert alert-warning" role="alert"></div>
       <div class="alert alert-success" role="alert"></div>
       <div class="input-group mb-3">
-        <input type="text" id="article-title" class="form-control" placeholder="文章标题">
+        <input type="text" id="article-title" class="form-control" placeholder="文章标题" value="{{ resourceData.title }}">
         <div class="input-group-append">
-          <button id="article-save" class="btn btn-primary" type="button">保存</button>
+          <button id="{{ 'article-update' if resourceData.title else 'article-save' }}" data-id="{{ resourceData.id }}" class="btn btn-primary" type="button">
+            {{ '更新' if resourceData.title else '保存' }}
+          </button>
         </div>
       </div>
       <div id="editormd">
-        <textarea id="article-content" style="display:none;"></textarea>
+        <textarea id="article-content" style="display:none;">{{ resourceData.content }}</textarea>
       </div>
     </section>
   {% include "../../layout/admin/footer.tpl" %}

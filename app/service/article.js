@@ -15,7 +15,7 @@ class ArticleService extends Service {
       created_at: new Date().toLocaleString(),
       updated_at: new Date().toLocaleString(),
       created_at_beauty: moment().format('YYYY-MM-DD HH:mm:ss'),
-      updated_at_beauty: moment().format('YYYY-MM-DD HH:mm:ss')
+      updated_at_beauty: moment().format('YYYY-MM-DD HH:mm:ss'),
     });
   }
 
@@ -26,22 +26,22 @@ class ArticleService extends Service {
     if (page && size) {
       result = await ctx.model.Article.findAndCountAll({
         attributes: {
-          exclude: ['content']
+          exclude: [ 'content' ],
         },
         order: [
-          ['updated_at', 'DESC'],
+          [ 'updated_at', 'DESC' ],
         ],
         offset: (page - 1) * size,
-        limit: size
+        limit: size,
       });
     } else {
       result = await ctx.model.Article.findAndCountAll({
         attributes: {
-          exclude: ['content']
+          exclude: [ 'content' ],
         },
         order: [
-          ['updated_at', 'DESC'],
-        ]
+          [ 'updated_at', 'DESC' ],
+        ],
       });
     }
 
@@ -53,11 +53,36 @@ class ArticleService extends Service {
 
     const result = await ctx.model.Article.findOne({
       where: {
-        id: id,
+        id,
       },
     });
 
     return result;
+  }
+
+  async deleteOne(id) {
+    const { ctx } = this;
+
+    await ctx.model.Article.destroy({
+      where: {
+        id,
+      },
+    });
+  }
+
+  async updateOne(id, model) {
+    const { ctx } = this;
+
+    await ctx.model.Article.update({
+      title: model.title,
+      content: model.content,
+      updated_at: new Date().toLocaleString(),
+      updated_at_beauty: moment().format('YYYY-MM-DD HH:mm:ss'),
+    }, {
+      where: {
+        id,
+      },
+    });
   }
 }
 

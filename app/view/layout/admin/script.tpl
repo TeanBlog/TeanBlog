@@ -18,5 +18,6 @@
 
   {% if value === "manage" %}
     <script src="/public/js/admin/auth.js"></script>
+    <script src="/public/js/admin/manage.js"></script>
   {% endif %}
 {% endmacro %}

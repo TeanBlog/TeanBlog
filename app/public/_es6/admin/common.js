@@ -113,8 +113,8 @@ class Validator {
 }
 
 $('.logout-btn').click(() => {
-  const _cookie = new Cookie;
+  const _cookie = new Cookie();
 
   _cookie.remove('TEAN_ADMIN');
-  window.location.href = '/admin/login'
-})
+  window.location.href = '/admin/login';
+});

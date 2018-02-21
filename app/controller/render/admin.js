@@ -17,8 +17,14 @@ class AdminController extends Controller {
 
   async article() {
     const { ctx } = this;
+    const id = ctx.params.id;
+    let resourceData = {};
 
-    await ctx.render('page/admin/article.tpl');
+    if (id) {
+      resourceData = await ctx.service.article.findById(id);
+    }
+
+    await ctx.render('page/admin/article.tpl', { resourceData });
   }
 
   async manage() {
@@ -29,7 +35,7 @@ class AdminController extends Controller {
     const resourceData = await ctx.service.article.findAll(page, size);
     resourceData.current = page;
 
-    await ctx.render('page/admin/manage.tpl', { resourceData: resourceData });
+    await ctx.render('page/admin/manage.tpl', { resourceData });
   }
 }
 

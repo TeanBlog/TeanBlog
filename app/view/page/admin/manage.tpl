@@ -11,6 +11,10 @@
 <body>
   {{ headerTemp.current(3) }}
     <section class="container admin-panel">
+      <div class="alert alert-danger" role="alert"></div>
+      <div class="alert alert-info" role="alert"></div>
+      <div class="alert alert-warning" role="alert"></div>
+      <div class="alert alert-success" role="alert"></div>
       <div class="table-responsive">
         <table class="table table-striped table-sm">
           <thead>
@@ -27,10 +31,14 @@
                 <td>{{ article.updated_at_beauty }}</td>
                 <td>{{ article.title | truncate(15) }}</td>
                 <td class="table-action-btn__wrapper">
-                  <button type="button" class="table-action-btn btn btn-primary">编辑</button>
+                  <button type="button" data-id="{{ article.id }}" class="table-action-btn table-action-btn__edit btn btn-primary">
+                    编辑
+                  </button>
                 </td>
                 <td class="table-action-btn__wrapper">
-                  <button type="button" class="table-action-btn btn btn-danger">删除</button>
+                  <button type="button" data-id="{{ article.id }}" class="table-action-btn table-action-btn__delete btn btn-danger">
+                    删除
+                  </button>
                 </td>
               </tr>
             {% endfor %}

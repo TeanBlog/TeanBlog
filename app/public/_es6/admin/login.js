@@ -28,7 +28,7 @@ $(() => {
     const errorMsg = validatorFunc();
 
     if (errorMsg) {
-      _message.warning(errorMsg)
+      _message.warning(errorMsg);
       return false;
     }
 
@@ -57,7 +57,7 @@ $(() => {
           ? errorMsg = data.responseJSON.msg
           : errorMsg = data.status + ': ' + data.statusText;
 
-        _message.error(errorMsg)
+        _message.error(errorMsg);
       },
       complete: () => {
         $('.btn')

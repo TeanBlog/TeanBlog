@@ -1,21 +1,21 @@
 'use strict';
 
 $(() => {
-	const _cookie = new Cookie();
-	const _message = new Message();
+  const _cookie = new Cookie();
+  const _message = new Message();
 
   const articleForm = {
-		title: $('#article-title')[0]
-	}
+    title: $('#article-title')[0],
+  };
 
   const validatorFunc = () => {
-		const validator = new Validator();
+    const validator = new Validator();
 
     validator.add(articleForm.title, [{
       strategy: 'isNonEmpty',
       errorMsg: '标题不能为空',
     }, {
-			strategy: 'max:100',
+      strategy: 'max:100',
       errorMsg: '标题不能超过 100 个字',
     }]);
     const errorMsg = validator.start();
@@ -23,6 +23,8 @@ $(() => {
   };
 
   const editor = editormd('editormd', {
+    width: '100%',
+    height: '80vh',
     path: '/public/lib/editor.md-lib/',
     placeholder: '使用 TeanBlog 开启你的写作之旅吧~',
     toolbarIcons: () => {
@@ -63,21 +65,21 @@ $(() => {
   });
 
   $('#article-save').click(() => {
-		const errorMsg = validatorFunc();
+    const errorMsg = validatorFunc();
     const newArticleModel = {
       title: $('#article-title').val(),
       content: editor.getMarkdown(),
     };
 
     if (errorMsg) {
-			_message.warning(errorMsg);
+      _message.warning(errorMsg);
       return false;
-		}
+    }
 
-		if (!newArticleModel.content.trim().length) {
-			_message.warning('文章内容不能为空')
+    if (!newArticleModel.content.trim().length) {
+      _message.warning('文章内容不能为空');
       return false;
-		}
+    }
 
     $.ajax({
       type: 'POST',
@@ -88,13 +90,13 @@ $(() => {
       contentType: 'application/json',
       dataType: 'json',
       data: JSON.stringify(newArticleModel),
-      success: data => {
-				window.location.href = '/admin/article/manage/1'
+      success: () => {
+        window.location.href = '/admin/article/manage/1';
       },
       error: data => {
-				if (data.status) {
-					window.href = '/admin/login'
-				}
+        if (data.status > 400) {
+          window.href = '/admin/login';
+        }
 
         let errorMsg = '';
 
@@ -102,7 +104,55 @@ $(() => {
           ? errorMsg = data.responseJSON.msg
           : errorMsg = data.status + ': ' + data.statusText;
 
-				_message.error(errorMsg)
+        _message.error(errorMsg);
+      },
+    });
+  });
+
+  $('#article-update').click(e => {
+    const errorMsg = validatorFunc();
+    const id = e.target.attributes['data-id'].value;
+    const newArticleModel = {
+      title: $('#article-title').val(),
+      content: editor.getMarkdown(),
+    };
+
+    console.log($('#article-title').val());
+
+    if (errorMsg) {
+      _message.warning(errorMsg);
+      return false;
+    }
+
+    if (!newArticleModel.content.trim().length) {
+      _message.warning('文章内容不能为空');
+      return false;
+    }
+
+    $.ajax({
+      type: 'PATCH',
+      url: `/api/admin/article?id=${id}`,
+      headers: {
+        Authorization: _cookie.get('TEAN_ADMIN'),
+      },
+      contentType: 'application/json',
+      dataType: 'json',
+      data: JSON.stringify(newArticleModel),
+      success: () => {
+        window.location.href = '/admin/article/manage/1';
+      },
+      error: data => {
+        if (data.status > 400) {
+          window.href = '/admin/login';
+        }
+
+        let errorMsg = '';
+
+        data.responseJSON.msg
+          ? errorMsg = data.responseJSON.msg
+          : errorMsg = data.status + ': ' + data.statusText;
+
+        _message.error(errorMsg);
       },
     });
   });
