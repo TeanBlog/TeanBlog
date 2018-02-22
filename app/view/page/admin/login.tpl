@@ -4,7 +4,11 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
-  {{ metaTemp.value("TeanBlog | 登录", "Blog, TeanBlog", "A minimalist style blog based on Egg.js") }}
+  {{ metaTemp.value(
+        resourceData.config._name + " | 登录",
+        "Blog, TeanBlog",
+        resourceData.config._desc)
+  }}
   <link rel="stylesheet" href="/public/css/admin/login.css">
 </head>
 <body>

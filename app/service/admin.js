@@ -4,6 +4,11 @@ const Service = require('egg').Service;
 const bcrypt = require('bcrypt');
 
 class AdminService extends Service {
+  /**
+   * 登录校验
+   * @param {Object} model - 管理员账号密码
+   * @return {Boolean} 验证结果
+   */
   async findByLogin(model) {
     const { ctx } = this;
 

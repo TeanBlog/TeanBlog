@@ -3,11 +3,11 @@
 const fs = require('fs');
 const YAML = require('yamljs');
 
-function loadYAMLFile (file) {
+function loadYAMLFile(file) {
   return YAML.parse(fs.readFileSync(file).toString());
 }
 
-const _config = loadYAMLFile('config.local.yml');
+const _config = loadYAMLFile('config.yml');
 
 /**
  * 默认配置
@@ -64,7 +64,7 @@ module.exports = app => {
       collate: 'utf8_general_ci',
     },
     username: _config._system.db.username,
-    password: _config._system.db.password
+    password: _config._system.db.password,
   };
 
   // response_hander
@@ -91,12 +91,12 @@ module.exports = app => {
     clientSecret: _config._gitalk.clientSecret,
     repo: _config._gitalk.repo,
     owner: _config._gitalk.owner,
-    admin: _config._gitalk.admin
+    admin: _config._gitalk.admin,
   };
 
   // 错误处理
   config.onerror = {
-    errorPageUrl: () => '/error'
+    errorPageUrl: () => '/error',
   };
 
   // renderData
@@ -107,8 +107,8 @@ module.exports = app => {
     _blog: _config._blog,
     _link: _config._link,
     _about: _config._about,
-    _gitalk: _config._gitalk
-  }
+    _gitalk: _config._gitalk,
+  };
 
   return config;
 };

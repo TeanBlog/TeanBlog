@@ -5,7 +5,11 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
-  {{ metaTemp.value("TeanBlog | 撰写编辑", "Blog, TeanBlog", "A minimalist style blog based on Egg.js") }}
+  {{ metaTemp.value(
+        resourceData.config._name + " | 撰写编辑",
+        "Blog, TeanBlog",
+        resourceData.config._desc)
+  }}
   <link rel="stylesheet" href="/public/lib/editormd.min.css">
   <link rel="stylesheet" href="/public/css/admin/article.css">
 </head>

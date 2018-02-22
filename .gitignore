@@ -6,6 +6,8 @@ package-lock.json
 yarn.lock
 .idea/
 /public/
+app/public/_es6
+app/public/_less
 migrations/
 config/manifest.json
 config/buildConfig.json

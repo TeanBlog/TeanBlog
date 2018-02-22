@@ -3,6 +3,7 @@
 module.exports = app => {
   const { DATE, STRING, TEXT } = app.Sequelize;
 
+  // 文章模型
   const Article = app.model.define('article', {
     id: {
       allowNull: false,

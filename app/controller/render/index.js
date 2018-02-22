@@ -4,6 +4,7 @@ const marked = require('marked');
 const Controller = require('egg').Controller;
 
 class IndexController extends Controller {
+  // 主页
   async home() {
     const { ctx } = this;
     const resourceData = {};
@@ -15,6 +16,7 @@ class IndexController extends Controller {
     await ctx.render('page/tean/home.tpl', { resourceData });
   }
 
+  // 博客页
   async blog() {
     const { ctx } = this;
     const resourceData = {};
@@ -26,6 +28,7 @@ class IndexController extends Controller {
     await ctx.render('page/tean/blog.tpl', { resourceData });
   }
 
+  // 文章页
   async article() {
     const { ctx } = this;
     const id = ctx.params.id;
@@ -38,6 +41,7 @@ class IndexController extends Controller {
     await ctx.render('page/tean/article.tpl', { resourceData });
   }
 
+  // 友链页
   async links() {
     const { ctx } = this;
 
@@ -47,6 +51,7 @@ class IndexController extends Controller {
     await ctx.render('page/tean/links.tpl', { resourceData });
   }
 
+  // 关于页
   async about() {
     const { ctx } = this;
 
@@ -56,16 +61,16 @@ class IndexController extends Controller {
     await ctx.render('page/tean/about.tpl', { resourceData });
   }
 
+  // 404
   async notFound() {
     const { ctx } = this;
-    const errorCode = ctx.params.real_status;
 
     await ctx.render('page/tean/404.tpl');
   }
 
+  // error
   async error() {
     const { ctx } = this;
-    const errorCode = ctx.params.real_status;
 
     await ctx.render('page/tean/error.tpl');
   }

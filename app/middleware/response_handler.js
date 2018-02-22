@@ -3,8 +3,8 @@
 module.exports = () => {
   /**
    * 数据格式处理中间件
-   * @param {Object} ctx 上下文
-   * @param {Function} next 继续下文
+   * @param {Object} ctx - 上下文
+   * @param {Function} next - 继续下文
    * @return {void}
    */
   return async function responseHandler(ctx, next) {

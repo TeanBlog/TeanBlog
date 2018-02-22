@@ -3,6 +3,7 @@
 module.exports = app => {
   const { DATE, STRING, UUID } = app.Sequelize;
 
+  // 管理员模型
   const Admin = app.model.define('admin', {
     id: {
       allowNull: false,
