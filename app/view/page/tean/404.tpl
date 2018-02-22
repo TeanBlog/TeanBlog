@@ -6,6 +6,7 @@
 <head>
   {{ metaTemp.value(
       "404 Not Found",
+      "404 Not Found",
       "404 Not Found")
   }}
 </head>

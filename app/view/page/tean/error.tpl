@@ -6,6 +6,7 @@
 <head>
   {{ metaTemp.value(
       "Server Error",
+      "Server Error",
       "Server Error")
   }}
 </head>

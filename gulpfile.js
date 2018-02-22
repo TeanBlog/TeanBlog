@@ -5,16 +5,11 @@ const less = require('gulp-less');
 const minifyCSS = require('gulp-minify-css');
 const uglify = require('gulp-uglify');
 const babel = require('gulp-babel');
-// const rev = require('gulp-rev');
-// const revCollector = require('gulp-rev-collector');
 
 gulp.task('less', () => {
   gulp.src([ 'app/public/_less/**/*.less', '!app/public/_less/tean/theme/**' ])
     .pipe(less())
     .pipe(minifyCSS())
-    // .pipe(rev())
-    // .pipe(rev.manifest())
-    // .pipe(gulp.dest('app/public/css/rev'))
     .pipe(gulp.dest('app/public/css'));
 });
 

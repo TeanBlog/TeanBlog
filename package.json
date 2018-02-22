@@ -36,8 +36,6 @@
     "gulp-babel": "^7.0.1",
     "gulp-less": "^3.5.0",
     "gulp-minify-css": "^1.2.4",
-    "gulp-rev": "^8.1.1",
-    "gulp-rev-collector": "^1.2.4",
     "gulp-uglify": "^3.0.0",
     "webstorm-disable-index": "^1.2.0"
   },

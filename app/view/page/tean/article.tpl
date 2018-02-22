@@ -16,6 +16,7 @@
 <body>
   {{ headerTemp.set(2,
       resourceData.config._link.enable,
+      "blog, " + resourceData.title,
       resourceData.config._about.enable)
   }}
     <main class="content" role="main">

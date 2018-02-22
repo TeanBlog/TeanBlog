@@ -7,6 +7,7 @@
 <head>
   {{ metaTemp.value(
       resourceData.config._name + " | 博客",
+      "blog, " + resourceData.config._name,
       resourceData.config._desc)
   }}
 </head>
