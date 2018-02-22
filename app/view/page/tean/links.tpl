@@ -6,31 +6,28 @@
 <html lang="zh-cn">
 <head>
   {{ metaTemp.value(
-      resourceData.config._name + " | 博客",
+      resourceData.config._name + " | 友链",
       resourceData.config._desc)
   }}
 </head>
 <body>
-  {{ headerTemp.set(2,
+  {{ headerTemp.set(3,
       resourceData.config._link.enable,
       resourceData.config._about.enable)
   }}
     <main class="content" role="main">
       <article>
-        {{ bannerTemp.value("博客", resourceData.config._blog.desc) }}
+        {{ bannerTemp.value("友链", resourceData.config._link.desc) }}
         <div class="page-content">
-          <section class="list">
-            {% if resourceData.articles.length === 0 %}
-              <h1>
-                <a href="https://github.com/TeanLee/TeanBlog">Hello World !</a>
-              </h1>
-            {% endif %}
-            {% for article in resourceData.articles %}
-              <h1>
-                <a href="/articles/post/{{ article.id }}">{{ article.title }}</a>
-              </h1>
-            {% endfor %}
-          </section>
+          {% if resourceData.config._link.content.length %}
+            <section class="list">
+              {% for link in resourceData.config._link.content %}
+                <h1>
+                  <a href="{{ link.url }}" target="_blank">{{ link.name }}</a>
+                </h1>
+              {% endfor %}
+            </section>
+          {% endif %}
         </div>
       </article>
     </main>

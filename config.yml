@@ -1,0 +1,55 @@
+# 博客名称
+_name: TeanBlog
+# SEO desc、首页二级标题
+_desc: 基于 Egg.js 的简约博客系统
+
+# 首页
+_home:
+  # 项目展示
+  projects:
+    enable: false
+    content:
+      - name: TeanBlog
+        url: https://github.com/TeanLee/TeanBlog
+
+# 友链页面
+_link:
+  enable: false
+  # 二级标题
+  desc: 我的朋友们
+  link:
+    content:
+      - name: Trevor
+        url: https://trevor.top
+
+# 关于页面
+_about:
+  enable: false
+  nickname: Trevor
+  # 关于页面二级标题
+  desc: 万里不惜死，朝得成功
+  # 技能
+  skill:
+    content:
+      - value: JavaScript
+  # 联系方式
+  contact:
+    content:
+      - name: GitHub
+        url: https://github.com/HuangXiZhou
+
+# 评论模块
+_gitalk:
+  enable: false
+  clientId: GitHub client ID
+  clientSecret: GitHub Client Secret
+  repo: 仓库名
+  owner: 拥有者
+  admin: 拥有者 # 目前只支持一个管理员
+
+_system:
+  key: 你的秘钥
+  jwt: 你的秘钥
+  db:
+    username: 你的数据库账号
+    password: 你的数据库密码

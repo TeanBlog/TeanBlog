@@ -6,6 +6,7 @@
   "dependencies": {
     "bcrypt": "^1.0.3",
     "egg": "^2.3.0",
+    "egg-onerror": "^2.0.0",
     "egg-scripts": "^2.5.1",
     "egg-sequelize": "^3.1.1",
     "egg-validate": "^1.0.0",
@@ -16,7 +17,8 @@
     "moment": "^2.20.1",
     "ms": "^2.1.1",
     "mysql2": "^1.5.2",
-    "uniqid": "^4.1.1"
+    "uniqid": "^4.1.1",
+    "yamljs": "^0.3.0"
   },
   "devDependencies": {
     "autod": "^3.0.1",
@@ -50,19 +52,12 @@
     "dev": "egg-bin dev --port=8003",
     "debug": "egg-bin debug",
     "fix": "npm run lint -- --fix",
-    "test": "npm run lint -- --fix && npm run test-local",
-    "test-local": "egg-bin test",
-    "cov": "egg-bin cov",
     "lint": "eslint .",
-    "ci": "npm run lint && npm run cov",
     "autod": "autod"
-  },
-  "ci": {
-    "version": "8"
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/TeanLee/TeanBlog"
   },
   "author": "TeanLee",
   "license": "MIT",

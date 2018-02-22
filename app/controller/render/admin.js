@@ -9,12 +9,6 @@ class AdminController extends Controller {
     await ctx.render('page/admin/login.tpl');
   }
 
-  async home() {
-    const { ctx } = this;
-
-    await ctx.render('page/admin/home.tpl');
-  }
-
   async article() {
     const { ctx } = this;
     const id = ctx.params.id;

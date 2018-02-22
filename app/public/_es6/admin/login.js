@@ -48,7 +48,7 @@ $(() => {
       contentType: 'application/json; charset=UTF-8',
       data: JSON.stringify(loginModel),
       success: () => {
-        window.location.href = '/admin/home';
+        window.location.href = '/admin/article/new';
       },
       error: data => {
         let errorMsg = '';

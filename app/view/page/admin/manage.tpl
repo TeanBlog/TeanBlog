@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="/public/css/admin/manage.css">
 </head>
 <body>
-  {{ headerTemp.current(3) }}
+  {{ headerTemp.current(2) }}
     <section class="container admin-panel">
       <div class="alert alert-danger" role="alert"></div>
       <div class="alert alert-info" role="alert"></div>

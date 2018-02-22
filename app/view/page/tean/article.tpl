@@ -1,45 +1,50 @@
 {% import "../../layout/tean/meta.tpl" as metaTemp %}
 {% import "../../layout/tean/header.tpl" as headerTemp %}
 {% import "../../components/tean/banner.tpl" as bannerTemp %}
+{% import "../../layout/tean/script.tpl" as scriptSet %}
 
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
-  {{ metaTemp.value("TeanBlog | " + resourceData.title, "Blog, TeanBlog", "A minimalist style blog based on Egg.js") }}
+  {{ metaTemp.value(
+      resourceData.config._name + " | " + resourceData.title,
+      resourceData.config._desc)
+  }}
   <link href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/github-gist.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <link href="https://unpkg.com/gitalk/dist/gitalk.css" rel="stylesheet">
 </head>
 <body>
-  {{ headerTemp.current(2) }}
+  {{ headerTemp.set(2,
+      resourceData.config._link.enable,
+      resourceData.config._about.enable)
+  }}
     <main class="content" role="main">
       <article>
-        {{ bannerTemp.value(title if resourceData.bannerTitle else "文章示例", title if resourceData.bannerSecTitle else "基于 Egg.js 的简约博客系统") }}
+        {{ bannerTemp.value(resourceData.title, resourceData.created_at_beauty) }}
         <div class="page-content">
           <div class="post-content">
             {{ resourceData.content | safe}}
+            <footer class="post-modified-date">
+              <p> Updated
+                <time datetime="{{ resourceData.updated_at_beauty }}">
+                  {{ resourceData.updated_at_beauty }}
+                </time>
+              </p>
+            </footer>
           </div>
         </div>
       </article>
-      <section id="gitalk-container"></section>
+      {% include "../../components/tean/comment.tpl" %}
     </main>
   {% include "../../layout/tean/footer.tpl" %}
   {% include "../../layout/script.tpl" %}
-  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-  <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
-  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-  <script>
-    var gitalk = new Gitalk({
-      clientID: '1918f30b0e5955c3895d',
-      clientSecret: 'aafcf204fa93defdde2bb9cabbb31faddbccda4a',
-      repo: 'TeanBlog',
-      owner: 'TeanLee',
-      admin: ['TeanLee', 'HuangXiZhou'],
-      distractionFreeMode: false,
-      id: md5(location.href)
-    })
-
-    gitalk.render('gitalk-container')
-  </script>
+  {{ scriptSet.set(resourceData.config._gitalk.enable,
+      resourceData.config._gitalk.clientId,
+      resourceData.config._gitalk.clientSecret,
+      resourceData.config._gitalk.repo,
+      resourceData.config._gitalk.owner,
+      resourceData.config._gitalk.admin,
+      resourceData.id)
+  }}
 </body>
 </html>

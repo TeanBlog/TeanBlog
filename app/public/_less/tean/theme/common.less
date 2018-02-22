@@ -837,6 +837,11 @@ body:hover .latest {
   background-size: 64vw;
 }
 
+.content header h1 {
+  word-wrap: break-word;
+  word-break:break-all;
+}
+
 .post-content {
   img {
     width: inherit;
@@ -853,12 +858,36 @@ body:hover .latest {
   }
 }
 
+.gt-container {
+  padding-top: 2em;
+}
+
 .gt-avatar {
   & > img {
     margin-left: 0;
   }
 }
 
-.gt-btn.gt-btn-public {
+.gt-btn.gt-btn-public,
+.gt-btn.gt-btn-login {
   text-align: center;
+}
+
+.gt-container .gt-initing-text {
+  display: none;
+}
+
+.gt-comments-null {
+  color: #c7c5ca;
+}
+
+.gt-initing-text {
+  text-align: center;
+}
+
+@media (max-width: 375px) {
+  .gt-comment-text,
+  .gt-comment-date {
+    display: none;
+  }
 }

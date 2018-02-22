@@ -5,19 +5,25 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
-  {{ metaTemp.value("TeanBlog | 主页", "Blog, TeanBlog", "A minimalist style blog based on Egg.js") }}
+  {{ metaTemp.value(
+      resourceData.config._name,
+      resourceData.config._desc)
+  }}
 </head>
 <body>
-  {{ headerTemp.current(1) }}
+  {{ headerTemp.set(1,
+      resourceData.config._link.enable,
+      resourceData.config._about.enable)
+  }}
     <main class="content" role="main">
       <article>
-        {{ bannerTemp.value(title if resourceData.bannerTitle else "TeanBlog", title if resourceData.bannerSecTitle else "基于 Egg.js 的简约博客系统") }}
+        {{ bannerTemp.value(resourceData.config._name, resourceData.config._desc) }}
         <div class="page-content">
           <h2>最新文章</h2>
           <section class="list">
             {% if resourceData.articles.length === 0 %}
               <h1>
-                <a href="https://github.com/TeanLee/TeanBlog">Hello World !</a>
+                <a href="https://github.com/TeanLee/TeanBlog">Hi! TeanBlog</a>
               </h1>
             {% endif %}
             {% for article in resourceData.articles %}
@@ -26,6 +32,16 @@
               </h1>
             {% endfor %}
           </section>
+          {% if resourceData.config._home.projects.enable %}
+            <h2>项目展示</h2>
+            <section class="list">
+              {% for project in resourceData.config._home.projects.content %}
+                <h1>
+                  <a href="{{ project.url }}" target="_blank">{{ project.name }}</a>
+                </h1>
+              {% endfor %}
+            </section>
+          {% endif %}
         </div>
       </article>
     </main>

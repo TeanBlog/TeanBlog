@@ -6,10 +6,6 @@
     <script src="/public/js/admin/login.js"></script>
   {% endif %}
 
-  {% if value === "home" %}
-    <script src="/public/js/admin/auth.js"></script>
-  {% endif %}
-
   {% if value === "article" %}
     <script src="/public/js/admin/auth.js"></script>
     <script src="/public/lib/editormd.min.js"></script>
