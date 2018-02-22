@@ -3,6 +3,7 @@
 const Controller = require('egg').Controller;
 
 class ArticleController extends Controller {
+  // 添加文章
   async add() {
     const { ctx } = this;
     const model = ctx.request.body;
@@ -26,6 +27,7 @@ class ArticleController extends Controller {
     ctx.status = 201;
   }
 
+  // 删除文章
   async delete() {
     const { ctx } = this;
     const id = ctx.query.id;
@@ -38,6 +40,7 @@ class ArticleController extends Controller {
     ctx.status = 200;
   }
 
+  // 更新文章
   async update() {
     const { ctx } = this;
     const id = ctx.query.id;

@@ -84,16 +84,7 @@ module.exports = app => {
     _link: _config._link,
     _about: _config._about,
     _gitalk: _config._gitalk,
-  };
 
-  // gitalk
-  config.gitalk = {
-    enable: _config._gitalk.enable,
-    clientId: _config._gitalk.clientId,
-    clientSecret: _config._gitalk.clientSecret,
-    repo: _config._gitalk.repo,
-    owner: _config._gitalk.owner,
-    admin: _config._gitalk.admin,
   };
 
   // 错误处理

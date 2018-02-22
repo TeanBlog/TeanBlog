@@ -1,10 +1,9 @@
 'use strict';
 
-const marked = require('marked');
 const Controller = require('egg').Controller;
 
 class IndexController extends Controller {
-  // 主页
+  // 主页面渲染
   async home() {
     const { ctx } = this;
     const resourceData = {};
@@ -16,7 +15,7 @@ class IndexController extends Controller {
     await ctx.render('page/tean/home.tpl', { resourceData });
   }
 
-  // 博客页
+  // 博客页面渲染
   async blog() {
     const { ctx } = this;
     const resourceData = {};
@@ -35,13 +34,15 @@ class IndexController extends Controller {
 
     const resourceData = await ctx.service.article.findById(id);
 
-    resourceData.content = marked(resourceData.content);
+    resourceData.content = ctx.helper.md2html(resourceData.content);
+    resourceData.created_at_beauty = ctx.helper.beautyTime(resourceData.created_at_beauty);
+    resourceData.updated_at_beauty = ctx.helper.beautyTime(resourceData.updated_at_beauty);
     resourceData.config = ctx.app.config.renderData;
 
     await ctx.render('page/tean/article.tpl', { resourceData });
   }
 
-  // 友链页
+  // 友链页面渲染
   async links() {
     const { ctx } = this;
 
@@ -51,7 +52,7 @@ class IndexController extends Controller {
     await ctx.render('page/tean/links.tpl', { resourceData });
   }
 
-  // 关于页
+  // 关于页面渲染
   async about() {
     const { ctx } = this;
 
@@ -61,14 +62,23 @@ class IndexController extends Controller {
     await ctx.render('page/tean/about.tpl', { resourceData });
   }
 
-  // 404
+  // JSON Feed
+  async feed() {
+    const { ctx } = this;
+
+    const articles = await ctx.service.article.findAll(1, 5);
+
+    ctx.body = ctx.helper.generationFeed(articles.rows);
+  }
+
+  // 404页面渲染
   async notFound() {
     const { ctx } = this;
 
     await ctx.render('page/tean/404.tpl');
   }
 
-  // error
+  // Error页面渲染
   async error() {
     const { ctx } = this;
 

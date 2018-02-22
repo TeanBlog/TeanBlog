@@ -10,7 +10,7 @@
       <a href="https://sparanoid.com/lab/amsf/theme-curtana.html" title="Curtana" target="_blank">Curtana</a>
     </li>
     <li>
-      <a href="/feed.xml" title="Feed - Atom (The Atom Syndication Format)" target="_blank">Atom</a>
+      <a href="/feed" title="Feed - JSON Feed" target="_blank">Feed</a>
     </li>
   </ul>
 </footer>

@@ -11,6 +11,7 @@
     "egg-sequelize": "^3.1.1",
     "egg-validate": "^1.0.0",
     "egg-view-nunjucks": "^2.1.4",
+    "feed": "^1.1.1",
     "jsonwebtoken": "^8.1.1",
     "koa-jwt": "^3.3.0",
     "marked": "^0.3.16",

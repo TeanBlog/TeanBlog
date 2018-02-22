@@ -20,14 +20,14 @@
   }}
     <main class="content" role="main">
       <article>
-        {{ bannerTemp.value(resourceData.title, resourceData.created_at_beauty) }}
+        {{ bannerTemp.value(resourceData.title, "创建于 " + resourceData.created_at_beauty) }}
         <div class="page-content">
           <div class="post-content">
             {{ resourceData.content | safe}}
             <footer class="post-modified-date">
-              <p> Updated
-                <time datetime="{{ resourceData.updated_at_beauty }}">
-                  {{ resourceData.updated_at_beauty }}
+              <p>
+                <time datetime="{{ resourceData.updated_at }}">
+                  更新于 {{ resourceData.updated_at_beauty }}
                 </time>
               </p>
             </footer>

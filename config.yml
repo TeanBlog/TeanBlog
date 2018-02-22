@@ -54,6 +54,14 @@ _gitalk:
   owner: 拥有人
   admin: 拥有人 # 目前只支持一个管理员
 
+# json feed (https://jsonfeed.org/2017/05/17/announcing_json_feed)
+_feed:
+  title: 标题
+  description: 描述
+  link: 站点主页
+  author:
+    name: 名称
+
 _system:
   key: 秘钥
   jwt: 秘钥

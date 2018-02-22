@@ -10,6 +10,7 @@ module.exports = app => {
   router.get('/', controller.render.index.home);
   router.get('/blog', controller.render.index.blog);
   router.get('/articles/post/:id', controller.render.index.article);
+  router.get('/feed', controller.render.index.feed);
 
   if (config.renderData._link.enable) {
     router.get('/links', controller.render.index.links);

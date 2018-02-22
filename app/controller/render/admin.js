@@ -3,7 +3,7 @@
 const Controller = require('egg').Controller;
 
 class AdminController extends Controller {
-  // 登录
+  // 登录页面渲染
   async login() {
     const { ctx } = this;
     const resourceData = {};
@@ -12,7 +12,7 @@ class AdminController extends Controller {
     await ctx.render('page/admin/login.tpl', { resourceData });
   }
 
-  // 文章
+  // 撰写编辑页面渲染
   async article() {
     const { ctx } = this;
     const id = ctx.params.id;
@@ -26,7 +26,7 @@ class AdminController extends Controller {
     await ctx.render('page/admin/article.tpl', { resourceData });
   }
 
-  // 文章管理
+  // 文章管理页面渲染
   async manage() {
     const { ctx } = this;
     const page = Number(ctx.params.page);

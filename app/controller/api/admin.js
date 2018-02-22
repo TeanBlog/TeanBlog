@@ -5,6 +5,7 @@ const ms = require('ms');
 const Controller = require('egg').Controller;
 
 class AdminController extends Controller {
+  // 管理员登录
   async login() {
     const { ctx } = this;
     const model = ctx.request.body;
@@ -42,6 +43,7 @@ class AdminController extends Controller {
     }
   }
 
+  // 管理员鉴权
   async auth() {
     const { ctx } = this;
 
