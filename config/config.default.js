@@ -17,13 +17,12 @@ const _config = loadYAMLFile('config.yml');
 module.exports = app => {
   const config = exports = {};
 
-  // appKey (example)
+  // appKey
   config.keys = app.name + _config._system.key;
 
   // middleware
   config.middleware = [
     'responseHandler',
-    // 'errorHandler',
     'jwt',
   ];
 
@@ -32,14 +31,6 @@ module.exports = app => {
     defaultViewEngine: 'nunjucks',
     mapping: {
       '.tpl': 'nunjucks',
-    },
-  };
-
-  // cluster
-  config.cluster = {
-    listen: {
-      port: 8003,
-      hostname: '127.0.0.1',
     },
   };
 
@@ -55,7 +46,7 @@ module.exports = app => {
 
   // sequelize
   config.sequelize = {
-    dialect: 'mysql', // support: mysql, mariadb, postgres, mssql
+    dialect: 'mysql',
     database: 'TeanBlog',
     host: '127.0.0.1',
     port: '3306',
@@ -84,6 +75,17 @@ module.exports = app => {
     ],
   };
 
+  // renderData
+  config.renderData = {
+    _name: _config._name,
+    _desc: _config._desc,
+    _home: _config._home,
+    _blog: _config._blog,
+    _link: _config._link,
+    _about: _config._about,
+    _gitalk: _config._gitalk,
+  };
+
   // gitalk
   config.gitalk = {
     enable: _config._gitalk.enable,
@@ -97,17 +99,6 @@ module.exports = app => {
   // 错误处理
   config.onerror = {
     errorPageUrl: () => '/error',
-  };
-
-  // renderData
-  config.renderData = {
-    _name: _config._name,
-    _desc: _config._desc,
-    _home: _config._home,
-    _blog: _config._blog,
-    _link: _config._link,
-    _about: _config._about,
-    _gitalk: _config._gitalk,
   };
 
   return config;
