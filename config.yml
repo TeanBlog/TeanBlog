@@ -63,8 +63,8 @@ _feed:
     name: 名称
 
 _system:
-  key: 秘钥
-  jwt: 秘钥
+  key: 秘钥 # 不能设置数字 必须为 String 字符串
+  jwt: 秘钥 # 不能设置数字 必须为 String 字符串
   db:
     username: 数据库账号
-    password: 数据库密码
+    password: 数据库密码 # 不能设置数字 必须为 String 字符串
