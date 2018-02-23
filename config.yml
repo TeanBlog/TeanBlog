@@ -10,7 +10,7 @@ _home:
     enable: false
     content:
       - name: TeanBlog
-        url: https://github.com/TeanLee/TeanBlog
+        url: https://github.com/TeanBlog/TeanBlog
 
 # 博客页
 _blog:

@@ -24,7 +24,7 @@
           <section class="list">
             {% if resourceData.articles.length === 0 %}
               <h1>
-                <a href="https://github.com/TeanLee/TeanBlog">Hi! TeanBlog</a>
+                <a href="https://github.com/TeanBlog/TeanBlog">Hi! TeanBlog</a>
               </h1>
             {% endif %}
             {% for article in resourceData.articles %}

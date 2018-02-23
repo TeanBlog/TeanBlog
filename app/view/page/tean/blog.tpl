@@ -23,7 +23,7 @@
           <section class="list">
             {% if resourceData.articles.length === 0 %}
               <h1>
-                <a href="https://github.com/TeanLee/TeanBlog">Hello World !</a>
+                <a href="https://github.com/TeanBlog/TeanBlog">Hello World !</a>
               </h1>
             {% endif %}
             {% for article in resourceData.articles %}

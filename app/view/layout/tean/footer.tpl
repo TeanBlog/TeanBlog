@@ -1,7 +1,7 @@
 <footer class="footer">
   <ul>
     <li>
-      <a href="https://github.com/TeanLee/TeanBlog" title="TeanBlog" target="_blank">TeanBlog</a>
+      <a href="https://github.com/TeanBlog/TeanBlog" title="TeanBlog" target="_blank">TeanBlog</a>
     </li>
     <li>
       <a href="https://sparanoid.com/lab/amsf/" title="Almace Scaffolding" target="_blank">AMSF</a>
