@@ -34,6 +34,11 @@ module.exports = app => {
     },
   };
 
+  // static
+  exports.static = {
+    maxAge: 43200,
+  };
+
   // security
   config.security = {
     methodnoallow: {
