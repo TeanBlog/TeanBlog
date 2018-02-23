@@ -1,9 +1,13 @@
-
-# TeanBlog
+<div align="center">
+</div>
+<div align="center">
+  <a href="https://teanblog.trevor.top">
+    <img width="200" heigth="200" src="http://p4l92o6hd.bkt.clouddn.com/logo.png">
+  </a>
+  <h1>TeanBlog</h1>
+</div>
 
 > 基于 Egg.js 的简约博客
-
-![logo](http://p4l92o6hd.bkt.clouddn.com/logo.png)
 
 ## 📖 文档
 
