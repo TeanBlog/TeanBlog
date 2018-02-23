@@ -8,6 +8,7 @@
 <head>
   {{ metaTemp.value(
       resourceData.config._name + " | " + resourceData.title,
+      "blog, " + resourceData.title,
       resourceData.config._desc)
   }}
   <link href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/github-gist.min.css" rel="stylesheet">
@@ -16,7 +17,6 @@
 <body>
   {{ headerTemp.set(2,
       resourceData.config._link.enable,
-      "blog, " + resourceData.title,
       resourceData.config._about.enable)
   }}
     <main class="content" role="main">
